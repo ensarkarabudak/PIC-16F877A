@@ -1,0 +1,6 @@
+Message[302] D:\ADC2\ADC.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\ADC2\ADC.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\ADC2\ADC.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\ADC2\ADC.ASM 31 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\ADC2\ADC.ASM 39 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\ADC2\ADC.ASM 58 : Found directive in column 1. (END)

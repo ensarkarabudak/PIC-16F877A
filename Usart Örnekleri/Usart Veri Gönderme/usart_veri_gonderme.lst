@@ -1,0 +1,527 @@
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         LIST P=16F877A
+                      00002         #INCLUDE <P16F877A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F877A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00566         LIST
+Warning[207]: Found label after column 1. (DEGER)
+  00000020            00003         DEGER EQU 0X20
+Warning[207]: Found label after column 1. (DEGER2)
+  00000021            00004         DEGER2 EQU 0X21
+0000                  00005         ORG 0X00
+0000   2805           00006         GOTO MAIN
+0004                  00007         ORG 0X04
+0004   2808           00008         GOTO KESME
+0005                  00009 MAIN
+0005   201C           00010         CALL PORT_AYAR
+0006   2023           00011         CALL USART_AYAR
+0007                  00012 LOOP
+0007   2807           00013         GOTO LOOP
+                      00014 
+0008                  00015 KESME
+0008   3045           00016         MOVLW A'E'
+0009   0099           00017         MOVWF TXREG
+000A   2037           00018         CALL GECIKME
+000B   304E           00019         MOVLW A'N'
+000C   0099           00020         MOVWF TXREG
+000D   2037           00021         CALL GECIKME
+000E   3053           00022         MOVLW A'S'
+000F   0099           00023         MOVWF TXREG
+0010   2037           00024         CALL GECIKME
+0011   3041           00025         MOVLW A'A'
+0012   0099           00026         MOVWF TXREG
+0013   2037           00027         CALL GECIKME
+0014   3052           00028         MOVLW A'R'
+0015   0099           00029         MOVWF TXREG
+0016   2037           00030         CALL GECIKME
+                      00031         
+0017   1283 1303      00032         BANKSEL INTCON
+0019   138B           00033         BCF INTCON,GIE
+001A   130B           00034         BCF INTCON,PEIE
+001B   0009           00035         RETFIE
+                      00036 
+                      00037 
+001C                  00038 PORT_AYAR
+001C   1683 1303      00039         BANKSEL TRISC
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+001E   0187           00040         CLRF TRISC
+001F   1283 1303      00041         BANKSEL PORTC
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0021   0187           00042         CLRF PORTC
+0022   0008           00043         RETURN
+                      00044 
+0023                  00045 USART_AYAR
+0023   1683 1303      00046         BANKSEL SPBRG
+0025   3033           00047         MOVLW D'51'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0026   0099           00048         MOVWF SPBRG
+                      00049 
+0027   1683 1303      00050         BANKSEL TXSTA
+0029   3024           00051         MOVLW B'00100100'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002A   0098           00052         MOVWF TXSTA
+                      00053 
+002B   1283 1303      00054         BANKSEL RCSTA
+002D   3080           00055         MOVLW B'10000000'
+002E   0098           00056         MOVWF RCSTA
+                      00057 
+002F   1683 1303      00058         BANKSEL PIE1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0031   160C           00059         BSF PIE1,TXIE
+                      00060 
+0032   1283 1303      00061         BANKSEL INTCON
+0034   178B           00062         BSF INTCON,GIE
+0035   170B           00063         BSF INTCON,PEIE
+0036   0008           00064         RETURN
+0037                  00065 GECIKME
+0037   3004           00066         MOVLW 0X04
+0038   00A0           00067         MOVWF DEGER
+0039                  00068 DNG1
+0039   30FF           00069         MOVLW 0XFF
+003A   00A1           00070         MOVWF DEGER2
+003B                  00071 DNG2
+003B   0BA1           00072         DECFSZ DEGER2,F
+003C   283B           00073         GOTO DNG2
+003D   0BA0           00074         DECFSZ DEGER,F
+003E   2839           00075         GOTO DNG1
+003F   0008           00076         RETURN
+Warning[205]: Found directive in column 1. (END)
+                      00077 END
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2                             0000001B
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+DEGER                             00000020
+DEGER2                            00000021
+DNG1                              00000039
+DNG2                              0000003B
+D_A                               00000005
+D_NOT_A                           00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GECIKME                           00000037
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+GO_NOT_DONE                       00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KESME                             00000008
+LOOP                              00000007
+MAIN                              00000005
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PORT_AYAR                         0000001C
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RA0                               00000000
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SEN                               00000000
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA5                            00000005
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000087
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC5                            00000005
+TRISC6                            00000006
+TRISC7                            00000007
+TRISD                             00000088
+TRISD0                            00000000
+TRISD1                            00000001
+TRISD2                            00000002
+TRISD3                            00000003
+TRISD4                            00000004
+TRISD5                            00000005
+TRISD6                            00000006
+TRISD7                            00000007
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+USART_AYAR                        00000023
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CONFIG                           00002007
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+__DEBUG                           1
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+
+All other memory blocks unused.
+
+Program Memory Words Used:    61
+Program Memory Words Free:  8131
+
+
+MPASM  5.49           USART_VERI_GONDERME.ASM   12-24-2018  19:47:07         PAGE 10
+
+
+
+
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+

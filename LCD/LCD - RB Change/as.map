@@ -1,0 +1,53 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Sun Jan 02 17:13:56 2011
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x00009e
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000052      
+                            0x001800    0x001801      
+            82 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  BASASAR   0x000030    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    BASLA   0x000005    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    BEKLE   0x000045    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                       D1   0x000047    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                       D2   0x000049    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                  DISABLE   0x00004e    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                 HARF_YAZ   0x00003c    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    KESME   0x000026    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                KOMUT_YAZ   0x000033    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    SUTUN   0x000020    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BASLA   0x000005    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    SUTUN   0x000020    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    KESME   0x000026    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                  BASASAR   0x000030    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                KOMUT_YAZ   0x000033    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                 HARF_YAZ   0x00003c    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                    BEKLE   0x000045    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                       D1   0x000047    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                       D2   0x000049    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+                  DISABLE   0x00004e    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd-rbchange\Untitled.asm
+
+

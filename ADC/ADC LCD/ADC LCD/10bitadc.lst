@@ -1,0 +1,650 @@
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002         LIST P=16F877                                           
+                      00003 ;       ERRORLEVEL  -302  
+                      00004 
+                      00005         include <p16f877.inc>    
+                      00001         LIST
+                      00002 ; P16F877.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00373         LIST
+                      00006 ;       __CONFIG _CP_OFF &_WDT_OFF &_PWRTE_ON &_HS_OSC &_BODEN_OFF &_LVP_OFF &_CPD_OFF &_WRT_ENABLE_OFF 
+                      00007 ;------
+  00000020            00008 DEGER   EQU     H'20'
+  00000021            00009 DEGERH  EQU     H'21'
+  00000022            00010 DEGERL  EQU     H'22'
+  00000023            00011 DEGER3  EQU     H'23'
+  00000024            00012 SAYI1   EQU     H'24'
+  00000025            00013 SAYI2   EQU     H'25'
+  00000026            00014 SAYI3   EQU     H'26'
+  00000027            00015 SAYI4   EQU     H'27'
+  00000028            00016 D1      EQU     H'28'
+  00000029            00017 D2      EQU     H'29'
+  0000002A            00018 D3      EQU     H'2A'
+  0000002B            00019 D4      EQU     H'2B'
+  0000002C            00020 LSB     EQU     H'2C'
+  0000002D            00021 MSB     EQU     H'2D'
+  0000002E            00022 TEMP    EQU     H'2E'
+  0000002F            00023 BEKLEM  EQU     H'2F'
+  00000034            00024 TOPLA1  EQU     H'34'
+  00000035            00025 TOPLA2  EQU     H'35'
+  00000036            00026 TOPLA3  EQU     H'36'
+                      00027 ;---------
+                      00028         ORG     00H 
+0000   2???           00029         GOTO    START
+                      00030 ;-------------
+0001                  00031 START
+0001   0185           00032         CLRF    PORTA
+0002   0186           00033         CLRF    PORTB
+0003   0187           00034         CLRF    PORTC
+0004   0188           00035         CLRF    PORTD
+0005   01A0           00036         CLRF    DEGER
+0006   01A1           00037         CLRF    DEGERH
+0007   01A2           00038         CLRF    DEGERL
+0008   01A3           00039         CLRF    DEGER3
+0009   01A4           00040         CLRF    SAYI1
+000A   01A5           00041         CLRF    SAYI2
+000B   01A6           00042         CLRF    SAYI3
+000C   01A7           00043         CLRF    SAYI4
+000D   01A8           00044         CLRF    D1      
+000E   01A9           00045         CLRF    D2      
+000F   01AA           00046         CLRF    D3      
+0010   01AB           00047         CLRF    D4
+0011   01AC           00048         CLRF    LSB
+0012   01AD           00049         CLRF    MSB
+0013   01AE           00050         CLRF    TEMP
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0014   01AF           00051         CLRF    BEKLEM
+0015   3041           00052         MOVLW   B'01000001' ;A/D çevirimi açýktýr.iþlem yapýlabilir.Fosc/16
+0016   009F           00053         MOVWF   ADCON0
+0017   1683           00054         BSF     STATUS,RP0
+0018   30FF           00055         MOVLW   B'11111111'
+0019   0085           00056         MOVWF   TRISA^80H      
+001A   0186           00057         CLRF    TRISB^80H       
+001B   0187           00058         CLRF    TRISC^80H
+001C   0188           00059         CLRF    TRISD^80H
+001D   0189           00060         CLRF    TRISE^80H                       
+001E   308F           00061         MOVLW   B'10001111'
+001F   009F           00062         MOVWF   ADCON1^80       
+0020   3087           00063         MOVLW   B'10000111'     ;tmr0 için prescaler=256
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0021   0081           00064         MOVWF   OPTION_REG
+0022   1283           00065         BCF     STATUS,RP0     
+0023   2???           00066         CALL    TEMIZLE ;temizleye dallan
+0024   2???           00067         GOTO    GOSTER_LCD
+                      00068 ;------------------------------
+0025                  00069 ADC
+0025   30FA           00070         MOVLW   .250
+0026   00AE           00071         MOVWF   TEMP
+0027                  00072 ADBEKLE
+0027   0BAE           00073         DECFSZ  TEMP,F
+0028   2???           00074         GOTO    ADBEKLE
+0029   30FA           00075         MOVLW   .250
+002A   00AE           00076         MOVWF   TEMP
+002B                  00077 ADBEK2
+002B   0BAE           00078         DECFSZ  TEMP,F
+002C   2???           00079         GOTO    ADBEK2  
+002D   151F           00080         BSF     ADCON0,GO       ;Start A/D conversion
+002E                  00081 TARA
+002E   191F           00082         BTFSC   ADCON0,GO
+002F   2???           00083         GOTO    TARA
+                      00084 
+0030   1683           00085         BSF     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0031   081E           00086         MOVF    ADRESL,W
+0032   1283           00087         BCF     STATUS,RP0
+0033   00A2           00088         MOVWF   DEGERL
+0034   081E           00089         MOVF    ADRESH,W
+0035   00A1           00090         MOVWF   DEGERH
+0036   0008           00091         RETURN
+                      00092 ;-----------------------
+0037                  00093 BEKLE
+0037   300A           00094         MOVLW   .10                     
+0038   00AD           00095         MOVWF   MSB
+0039                  00096 D11     
+0039   3096           00097         MOVLW   .150
+003A   00AC           00098         MOVWF   LSB
+003B                  00099 D22
+003B   0BAC           00100         DECFSZ  LSB,F
+003C   2???           00101         GOTO    D22
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+003D   0BAD           00102         DECFSZ  MSB,F
+003E   2???           00103         GOTO    D11
+003F   0008           00104         RETURN
+                      00105 ;-----------------------
+0040                  00106 HESAP
+0040   3000           00107         MOVLW   .0
+0041   00A4           00108         MOVWF   SAYI1
+0042   00A5           00109         MOVWF   SAYI2
+0043   00A6           00110         MOVWF   SAYI3
+0044   00A7           00111         MOVWF   SAYI4
+0045                  00112 HES
+0045   3064           00113         MOVLW   .100
+0046   0220           00114         SUBWF   DEGER,W
+0047   1C03           00115         BTFSS   STATUS,C
+0048   2???           00116         GOTO    HES1
+0049   3064           00117         MOVLW   .100
+004A   02A0           00118         SUBWF   DEGER,F
+004B   0AA5           00119         INCF    SAYI2,F
+004C   2???           00120         GOTO    HES     
+004D                  00121 HES1
+004D   300A           00122         MOVLW   .10
+004E   0220           00123         SUBWF   DEGER,W
+004F   1C03           00124         BTFSS   STATUS,C
+0050   2???           00125         GOTO    HES2
+0051   300A           00126         MOVLW   .10
+0052   02A0           00127         SUBWF   DEGER,F
+0053   0AA6           00128         INCF    SAYI3,F
+0054   2???           00129         GOTO    HES1
+0055                  00130 HES2
+0055   3001           00131         MOVLW   .1
+0056   0220           00132         SUBWF   DEGER,W
+0057   1C03           00133         BTFSS   STATUS,C
+0058   2???           00134         GOTO    HESSON
+0059   3001           00135         MOVLW   .1
+005A   02A0           00136         SUBWF   DEGER,F
+005B   0AA7           00137         INCF    SAYI4,F
+005C   2???           00138         GOTO    HES2            
+005D                  00139 HESSON
+005D   0008           00140         RETURN
+                      00141 ;-----------------------------------------------------------------
+005E                  00142 ANA     
+005E   2???           00143         CALL    ADC
+005F   0822           00144         MOVF    DEGERL,W
+0060   00A0           00145         MOVWF   DEGER
+0061   2???           00146         CALL    HESAP
+0062   2???           00147         CALL    HESAP2
+0063   0824           00148         MOVF    SAYI1,W
+0064   0228           00149         SUBWF   D1,W
+0065   1D03           00150         BTFSS   STATUS,Z
+0066   2???           00151         GOTO    GOSTER_LCD
+0067   0825           00152         MOVF    SAYI2,W
+0068   0229           00153         SUBWF   D2,W
+0069   1D03           00154         BTFSS   STATUS,Z
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+006A   2???           00155         GOTO    GOSTER_LCD
+006B   0826           00156         MOVF    SAYI3,W
+006C   022A           00157         SUBWF   D3,W
+006D   1D03           00158         BTFSS   STATUS,Z
+006E   2???           00159         GOTO    GOSTER_LCD
+006F   0827           00160         MOVF    SAYI4,W
+0070   022B           00161         SUBWF   D4,W
+0071   1D03           00162         BTFSS   STATUS,Z
+0072   2???           00163         GOTO    GOSTER_LCD
+0073   2???           00164         GOTO    ANA
+                      00165 ;---------------------------
+0074                  00166 GOSTER_LCD
+0074   0824           00167         MOVF    SAYI1,W
+0075   00A8           00168         MOVWF   D1
+0076   0825           00169         MOVF    SAYI2,W
+0077   00A9           00170         MOVWF   D2
+0078   0826           00171         MOVF    SAYI3,W
+0079   00AA           00172         MOVWF   D3
+007A   0827           00173         MOVF    SAYI4,W
+007B   00AB           00174         MOVWF   D4
+007C   2???           00175         CALL    TEMIZLE
+007D   0828           00176         MOVF    D1,W
+007E   3E30           00177         ADDLW   H'30'
+007F   2???           00178         CALL    VERIYAZ
+0080   0829           00179         MOVF    D2,W
+0081   3E30           00180         ADDLW   H'30'
+0082   2???           00181         CALL    VERIYAZ
+0083   082A           00182         MOVF    D3,W
+0084   3E30           00183         ADDLW   H'30'
+0085   2???           00184         CALL    VERIYAZ
+0086   082B           00185         MOVF    D4,W
+0087   3E30           00186         ADDLW   H'30'
+0088   2???           00187         CALL    VERIYAZ
+0089   2???           00188         GOTO    ANA
+                      00189 ;---------------------------------------------------
+008A                  00190 HESAP2
+008A   3000           00191         MOVLW   .0
+008B   0221           00192         SUBWF   DEGERH,W
+008C   1903           00193         BTFSC   STATUS,Z
+008D   0008           00194         RETURN  
+008E   1821           00195         BTFSC   DEGERH,0
+008F   2???           00196         GOTO    YAZ256
+0090                  00197 DEVAM
+0090   18A1           00198         BTFSC   DEGERH,1
+0091   2???           00199         GOTO    YAZ512
+0092   0008           00200         RETURN
+0093                  00201 SONUC
+0093   300A           00202         MOVLW   .10
+0094   0227           00203         SUBWF   SAYI4,W
+0095   1803           00204         BTFSC   STATUS,C
+0096   2???           00205         CALL    BUYUK
+0097   300A           00206         MOVLW   .10
+0098   0226           00207         SUBWF   SAYI3,W
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0099   1803           00208         BTFSC   STATUS,C
+009A   2???           00209         CALL    BUYUK1
+009B   300A           00210         MOVLW   .10
+009C   0225           00211         SUBWF   SAYI2,W
+009D   1803           00212         BTFSC   STATUS,C
+009E   2???           00213         CALL    BUYUK2
+009F   0008           00214         RETURN
+00A0                  00215 BUYUK
+00A0   00A7           00216         MOVWF   SAYI4   
+00A1   0AA6           00217         INCF    SAYI3,F
+00A2   0008           00218         RETURN
+00A3                  00219 BUYUK1
+00A3   00A6           00220         MOVWF   SAYI3   
+00A4   0AA5           00221         INCF    SAYI2,F
+00A5   0008           00222         RETURN
+00A6                  00223 BUYUK2
+00A6   00A5           00224         MOVWF   SAYI2   
+00A7   0AA4           00225         INCF    SAYI1,F
+00A8   0008           00226         RETURN
+00A9                  00227 YAZ256
+00A9   3002           00228         MOVLW   .2
+00AA   07A5           00229         ADDWF   SAYI2,F
+00AB   3005           00230         MOVLW   .5
+00AC   07A6           00231         ADDWF   SAYI3,F
+00AD   3006           00232         MOVLW   .6
+00AE   07A7           00233         ADDWF   SAYI4,F
+00AF   2???           00234         CALL    SONUC
+00B0   2???           00235         GOTO    DEVAM
+00B1                  00236 YAZ512
+00B1   3005           00237         MOVLW   .5
+00B2   07A5           00238         ADDWF   SAYI2,F
+00B3   3001           00239         MOVLW   .1
+00B4   07A6           00240         ADDWF   SAYI3,F
+00B5   3002           00241         MOVLW   .2
+00B6   07A7           00242         ADDWF   SAYI4,F
+00B7   2???           00243         CALL    SONUC
+00B8   0008           00244         RETURN
+                      00245 ;-------------------------------------------------------------------
+00B9                  00246 SATIR2
+00B9   30C0           00247         MOVLW   H'C0'
+00BA   2???           00248         CALL    KOMUTYAZ
+00BB   0008           00249         RETURN
+00BC                  00250 SATIR1
+00BC   3080           00251         MOVLW   H'80'
+00BD   2???           00252         CALL    KOMUTYAZ
+00BE   0008           00253         RETURN
+00BF                  00254 VERIYAZ
+00BF   1487           00255         BSF     PORTC,1
+00C0   0086           00256         MOVWF   PORTB
+00C1   1007           00257         BCF     PORTC,0
+00C2   2???           00258         CALL    BEKLE
+00C3   1407           00259         BSF     PORTC,0
+00C4   0008           00260         RETURN
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00C5                  00261 TEMIZLE
+                      00262         ;MOVLW  H'0C'
+                      00263         ;CALL   KOMUTYAZ
+                      00264         ;MOVLW  H'01'
+                      00265         ;CALL   KOMUTYAZ
+                      00266         ;MOVLW  H'38'
+                      00267         ;CALL   KOMUTYAZ
+                      00268         ;MOVLW  H'0C'
+                      00269         ;CALL   KOMUTYAZ
+00C5   0008           00270         RETURN
+00C6                  00271 KOMUTYAZ
+00C6   1087           00272         BCF     PORTC,1
+00C7   0086           00273         MOVWF   PORTB
+00C8   1007           00274         BCF     PORTC,0
+00C9   2???           00275         CALL    BEKLE
+00CA   1407           00276         BSF     PORTC,0
+00CB   0008           00277         RETURN
+                      00278 ;------------------------------------------------------------------
+                      00279         END
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADBEK2                            0000002B
+ADBEKLE                           00000027
+ADC                               00000025
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANA                               0000005E
+BCLIE                             00000003
+BCLIF                             00000003
+BEKLE                             00000037
+BEKLEM                            0000002F
+BF                                00000000
+BRGH                              00000002
+BUYUK                             000000A0
+BUYUK1                            000000A3
+BUYUK2                            000000A6
+C                                 00000000
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CKE                               00000006
+CKP                               00000004
+CREN                              00000004
+CSRC                              00000007
+D                                 00000005
+D1                                00000028
+D11                               00000039
+D2                                00000029
+D22                               0000003B
+D3                                0000002A
+D4                                0000002B
+DATA_ADDRESS                      00000005
+DC                                00000001
+DEGER                             00000020
+DEGER3                            00000023
+DEGERH                            00000021
+DEGERL                            00000022
+DEVAM                             00000090
+D_A                               00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GOSTER_LCD                        00000074
+GO_DONE                           00000002
+HES                               00000045
+HES1                              0000004D
+HES2                              00000055
+HESAP                             00000040
+HESAP2                            0000008A
+HESSON                            0000005D
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+IRP                               00000007
+KOMUTYAZ                          000000C6
+LSB                               0000002C
+MSB                               0000002D
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SATIR1                            000000BC
+SATIR2                            000000B9
+SAYI1                             00000024
+SAYI2                             00000025
+SAYI3                             00000026
+SAYI4                             00000027
+SEN                               00000000
+SMP                               00000007
+SONUC                             00000093
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+START                             00000001
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TARA                              0000002E
+TEMIZLE                           000000C5
+TEMP                              0000002E
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOPLA1                            00000034
+TOPLA2                            00000035
+TOPLA3                            00000036
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+VERIYAZ                           000000BF
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+YAZ256                            000000A9
+YAZ512                            000000B1
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+MPASM  5.35                      10BITLCD.ASM   12-13-2010  8:59:08         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00000FCF
+_CP_HALF                          00001FDF
+_CP_OFF                           00003FFF
+_CP_UPPER_256                     00002FEF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_ENABLE_OFF                   00003DFF
+_WRT_ENABLE_ON                    00003FFF
+_XT_OSC                           00003FFD
+__16F877                          00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

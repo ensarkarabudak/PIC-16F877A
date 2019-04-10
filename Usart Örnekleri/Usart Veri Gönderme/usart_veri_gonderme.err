@@ -1,0 +1,7 @@
+Warning[207] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 3 : Found label after column 1. (DEGER)
+Warning[207] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 4 : Found label after column 1. (DEGER2)
+Message[302] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 40 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 48 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 52 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 59 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] C:\USERS\MAKRO\DESKTOP\USART_VERI_GONDERME\USART_VERI_GONDERME.ASM 77 : Found directive in column 1. (END)

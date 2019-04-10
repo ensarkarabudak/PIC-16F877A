@@ -1,0 +1,41 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Dec 27 23:40:24 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x000034
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x00001d      
+                            0x001800    0x001801      
+            29 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  GECIKME   0x000019    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+             _.org_1_000F   0x00000f    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+               anaprogram   0x000005    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+                    kesme   0x000010    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               anaprogram   0x000005    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+             _.org_1_000F   0x00000f    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+                    kesme   0x000010    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+                  GECIKME   0x000019    program     static C:\Documents and Settings\Huzeyfe\Desktop\Buton-Led Yakma Örneði\port.asm
+
+

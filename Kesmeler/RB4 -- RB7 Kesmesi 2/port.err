@@ -1,0 +1,11 @@
+Warning[205] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 1 : Found directive in column 1. (list)
+Warning[205] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 2 : Found directive in column 1. (include)
+Message[301] C:\PROGRAM FILES\MICROCHIP\MPASM SUITE\P16F877.INC 37 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[205] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 6 : Found directive in column 1. (ORG)
+Warning[203] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 7 : Found opcode in column 1. (goto)
+Warning[205] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 8 : Found directive in column 1. (ORG)
+Warning[203] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 9 : Found opcode in column 1. (goto)
+Message[302] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 40 : Found opcode in column 1. (RETURN)
+Warning[205] C:\DOCUMENTS AND SETTINGS\HUZEYFE\DESKTOP\BUTON-LED YAKMA ÖRNEðI\PORT.ASM 41 : Found directive in column 1. (END)

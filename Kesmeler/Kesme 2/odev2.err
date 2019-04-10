@@ -1,0 +1,4 @@
+Warning[205] D:\MPLAB\ODEV2\ODEV2.ASM 1 : Found directive in column 1. (INCLUDE)
+Message[302] D:\MPLAB\ODEV2\ODEV2.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MPLAB\ODEV2\ODEV2.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\MPLAB\ODEV2\ODEV2.ASM 28 : Found directive in column 1. (END)

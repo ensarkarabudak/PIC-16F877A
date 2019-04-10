@@ -1,0 +1,19 @@
+[Project]
+Filename=C:\Users\image\Desktop\PIC_LCD\lcd_deneme.bas
+[Environment]
+CaretX=11
+CaretY=25
+[Version]
+Enable=1
+Rollover=255
+Major=0
+Minor=0
+Release=0
+Build=7
+[Results]
+Visible=1
+Height=117
+View=2
+[Status]
+Message=Success : 204 program words used, 14 variable bytes used
+Image=0

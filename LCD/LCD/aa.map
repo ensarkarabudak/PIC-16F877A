@@ -1,0 +1,49 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Sun Jan 02 17:10:48 2011
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x000068
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000037      
+                            0x001800    0x001801      
+            55 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BEKLE   0x00002a    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                       D1   0x00002c    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                       D2   0x00002e    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                  DISABLE   0x000033    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                    DONGU   0x000017    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                 HARF_YAZ   0x000021    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                KOMUT_YAZ   0x000018    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                 LCD_AYAR   0x000004    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 LCD_AYAR   0x000004    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                    DONGU   0x000017    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                KOMUT_YAZ   0x000018    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                 HARF_YAZ   0x000021    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                    BEKLE   0x00002a    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                       D1   0x00002c    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                       D2   0x00002e    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+                  DISABLE   0x000033    program     static C:\Users\Harun\Desktop\PIC\MpLab\lcd\Untitled.asm
+
+

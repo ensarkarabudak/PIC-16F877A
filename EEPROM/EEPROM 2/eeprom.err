@@ -1,0 +1,15 @@
+Warning[205] D:\EEPROM1\EEPROM.ASM 3 : Found directive in column 1. (ORG)
+Message[302] D:\EEPROM1\EEPROM.ASM 7 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 9 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 43 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 49 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 51 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 57 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 60 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 64 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 66 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 68 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 71 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\EEPROM1\EEPROM.ASM 74 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\EEPROM1\EEPROM.ASM 77 : Found directive in column 1. (END)

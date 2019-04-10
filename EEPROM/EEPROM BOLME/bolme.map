@@ -1,0 +1,42 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Dec 22 00:03:20 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x00007e
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00003e      
+            63 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000023    program     static D:\eepromBolme\bolme.asm 
+                    BOLME   0x00002f    program     static D:\eepromBolme\bolme.asm 
+             EEPROM_ADRES   0x000001    program     static D:\eepromBolme\bolme.asm 
+               EEPROM_OKU   0x000007    program     static D:\eepromBolme\bolme.asm 
+               EEPROM_YAZ   0x000010    program     static D:\eepromBolme\bolme.asm 
+                   YAZDIR   0x000037    program     static D:\eepromBolme\bolme.asm 
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             EEPROM_ADRES   0x000001    program     static D:\eepromBolme\bolme.asm 
+               EEPROM_OKU   0x000007    program     static D:\eepromBolme\bolme.asm 
+               EEPROM_YAZ   0x000010    program     static D:\eepromBolme\bolme.asm 
+              ANA_PROGRAM   0x000023    program     static D:\eepromBolme\bolme.asm 
+                    BOLME   0x00002f    program     static D:\eepromBolme\bolme.asm 
+                   YAZDIR   0x000037    program     static D:\eepromBolme\bolme.asm 
+
+

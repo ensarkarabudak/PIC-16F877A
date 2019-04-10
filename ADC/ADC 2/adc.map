@@ -1,0 +1,46 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Dec 14 23:52:15 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x00005c
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002d      
+            46 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 ADC_INIT   0x00001c    program     static D:\ADC2\adc.asm          
+                  ADC_OKU   0x00000a    program     static D:\ADC2\adc.asm          
+              ANA_PROGRAM   0x000000    program     static D:\ADC2\adc.asm          
+                   DONGU1   0x000027    program     static D:\ADC2\adc.asm          
+                   DONGU2   0x000029    program     static D:\ADC2\adc.asm          
+                  GECIKME   0x000025    program     static D:\ADC2\adc.asm          
+                     MAIN   0x000007    program     static D:\ADC2\adc.asm          
+                     WAIT   0x00000d    program     static D:\ADC2\adc.asm          
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000000    program     static D:\ADC2\adc.asm          
+                     MAIN   0x000007    program     static D:\ADC2\adc.asm          
+                  ADC_OKU   0x00000a    program     static D:\ADC2\adc.asm          
+                     WAIT   0x00000d    program     static D:\ADC2\adc.asm          
+                 ADC_INIT   0x00001c    program     static D:\ADC2\adc.asm          
+                  GECIKME   0x000025    program     static D:\ADC2\adc.asm          
+                   DONGU1   0x000027    program     static D:\ADC2\adc.asm          
+                   DONGU2   0x000029    program     static D:\ADC2\adc.asm          
+
+

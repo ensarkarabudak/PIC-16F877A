@@ -1,0 +1,74 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Thu Dec 17 18:09:26 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000154
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000a9      
+            170 out of 8454 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x00003f    program     static D:\EEPROM\eeprom.asm     
+                   DONGU1   0x000081    program     static D:\EEPROM\eeprom.asm     
+                   DONGU2   0x000083    program     static D:\EEPROM\eeprom.asm     
+             EEPROM_ADRES   0x000001    program     static D:\EEPROM\eeprom.asm     
+               EEPROM_OKU   0x000007    program     static D:\EEPROM\eeprom.asm     
+               EEPROM_YAZ   0x000010    program     static D:\EEPROM\eeprom.asm     
+                 ENDMESAJ   0x00003e    program     static D:\EEPROM\eeprom.asm     
+                  E_PULSE   0x000073    program     static D:\EEPROM\eeprom.asm     
+                  GECIKME   0x00007f    program     static D:\EEPROM\eeprom.asm     
+             IKINCI_SATIR   0x000035    program     static D:\EEPROM\eeprom.asm     
+                ILK_SATIR   0x00002d    program     static D:\EEPROM\eeprom.asm     
+             KOMUT_GONDER   0x000057    program     static D:\EEPROM\eeprom.asm     
+                KOMUT_YAZ   0x00004f    program     static D:\EEPROM\eeprom.asm     
+              LCD_1SATIRW   0x000079    program     static D:\EEPROM\eeprom.asm     
+               LCD_2SATIR   0x000076    program     static D:\EEPROM\eeprom.asm     
+              LCD_2SATIRW   0x00007c    program     static D:\EEPROM\eeprom.asm     
+                 LCD_INIT   0x000046    program     static D:\EEPROM\eeprom.asm     
+                    MESAJ   0x000036    program     static D:\EEPROM\eeprom.asm     
+                   SATIR1   0x000088    program     static D:\EEPROM\eeprom.asm     
+              VERI_GONDER   0x000069    program     static D:\EEPROM\eeprom.asm     
+                 VERI_YAZ   0x000061    program     static D:\EEPROM\eeprom.asm     
+                   YAZDIR   0x000023    program     static D:\EEPROM\eeprom.asm     
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             EEPROM_ADRES   0x000001    program     static D:\EEPROM\eeprom.asm     
+               EEPROM_OKU   0x000007    program     static D:\EEPROM\eeprom.asm     
+               EEPROM_YAZ   0x000010    program     static D:\EEPROM\eeprom.asm     
+                   YAZDIR   0x000023    program     static D:\EEPROM\eeprom.asm     
+                ILK_SATIR   0x00002d    program     static D:\EEPROM\eeprom.asm     
+             IKINCI_SATIR   0x000035    program     static D:\EEPROM\eeprom.asm     
+                    MESAJ   0x000036    program     static D:\EEPROM\eeprom.asm     
+                 ENDMESAJ   0x00003e    program     static D:\EEPROM\eeprom.asm     
+              ANA_PROGRAM   0x00003f    program     static D:\EEPROM\eeprom.asm     
+                 LCD_INIT   0x000046    program     static D:\EEPROM\eeprom.asm     
+                KOMUT_YAZ   0x00004f    program     static D:\EEPROM\eeprom.asm     
+             KOMUT_GONDER   0x000057    program     static D:\EEPROM\eeprom.asm     
+                 VERI_YAZ   0x000061    program     static D:\EEPROM\eeprom.asm     
+              VERI_GONDER   0x000069    program     static D:\EEPROM\eeprom.asm     
+                  E_PULSE   0x000073    program     static D:\EEPROM\eeprom.asm     
+               LCD_2SATIR   0x000076    program     static D:\EEPROM\eeprom.asm     
+              LCD_1SATIRW   0x000079    program     static D:\EEPROM\eeprom.asm     
+              LCD_2SATIRW   0x00007c    program     static D:\EEPROM\eeprom.asm     
+                  GECIKME   0x00007f    program     static D:\EEPROM\eeprom.asm     
+                   DONGU1   0x000081    program     static D:\EEPROM\eeprom.asm     
+                   DONGU2   0x000083    program     static D:\EEPROM\eeprom.asm     
+                   SATIR1   0x000088    program     static D:\EEPROM\eeprom.asm     
+
+

@@ -1,0 +1,9 @@
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 1 : Found directive in column 1. (list)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 2 : Found directive in column 1. (include)
+Warning[207] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 30 : Found label after column 1. (msg0)
+Warning[207] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 31 : Found label after column 1. (msg1)
+Warning[207] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 32 : Found label after column 1. (msg2)
+Message[305] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 199 : Using default destination of 1 (file).
+Message[305] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 201 : Using default destination of 1 (file).
+Message[305] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 220 : Using default destination of 1 (file).
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\LCD PROGRAMLARý\4BIT LCD 1\DOS.ASM 241 : Found directive in column 1. (END)

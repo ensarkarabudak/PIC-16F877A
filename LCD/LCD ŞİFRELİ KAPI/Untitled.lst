@@ -1,0 +1,602 @@
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         list p=16F877
+                      00002         include"p16F877.inc"
+                      00001         LIST
+                      00002 ; P16F877.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00373         LIST
+                      00003 
+Warning[207]: Found label after column 1. (SAYAC0)
+  00000020            00004         SAYAC0 EQU 0X20
+Warning[207]: Found label after column 1. (SAYAC1)
+  00000021            00005         SAYAC1 EQU 0X21
+Warning[207]: Found label after column 1. (VERÝ)
+  00000022            00006         VERÝ EQU 0X22
+                      00007         ORG 0X00
+                      00008         
+0000                  00009 ANA_PROGRAM
+0000   1683 1303      00010         BANKSEL TRISB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0186           00011         CLRF TRISB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0003   0187           00012         CLRF TRISC
+                      00013 
+0004   1683 1303      00014         BANKSEL TRISD
+0006   30FF           00015         MOVLW h'FF'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0088           00016     MOVWF TRISD
+                      00017 
+0008   1283 1303      00018         BANKSEL PORTB
+000A   0188           00019         CLRF PORTD
+000B   1283 1303      00020         BANKSEL PORTC
+000D   0187           00021         CLRF PORTC
+                      00022 
+000E   3002           00023         MOVLW h'02'
+000F   2???           00024         CALL KOMUT_YAZ
+                      00025 
+0010   3002           00026         MOVLW h'02'
+0011   2???           00027         CALL KOMUT_YAZ
+                      00028 
+0012   3000           00029         MOVLW h'00'
+0013   2???           00030         CALL KOMUT_YAZ
+                      00031 
+0014   3000           00032         MOVLW h'00'
+0015   2???           00033         CALL KOMUT_YAZ
+                      00034 
+0016   300E           00035         MOVLW h'0E'
+0017   2???           00036         CALL KOMUT_YAZ
+                      00037 
+0018   3000           00038         MOVLW h'00'
+0019   2???           00039         CALL KOMUT_YAZ
+                      00040 
+001A   3006           00041         MOVLW h'06'
+001B   2???           00042         CALL KOMUT_YAZ
+                      00043 
+                      00044         
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+001C   3053           00045         MOVLW A'S'
+001D   2???           00046         CALL VERÝ_YAZ
+                      00047 
+001E   3049           00048         MOVLW A'I'
+001F   2???           00049         CALL VERÝ_YAZ
+                      00050 
+0020   3046           00051         MOVLW A'F'
+0021   2???           00052         CALL VERÝ_YAZ
+                      00053 
+0022   3052           00054         MOVLW   A'R'
+0023   2???           00055         CALL    VERÝ_YAZ
+                      00056         
+0024   3045           00057         MOVLW   A'E'
+0025   2???           00058         CALL    VERÝ_YAZ
+0026   3020           00059     MOVLW A' '
+0027   2???           00060         CALL VERÝ_YAZ
+                      00061 
+0028   3047           00062         MOVLW A'G'
+0029   2???           00063         CALL VERÝ_YAZ
+002A   3049           00064         MOVLW A'I'
+002B   2???           00065         CALL VERÝ_YAZ
+                      00066 
+002C   3052           00067         MOVLW A'R'
+002D   2???           00068         CALL VERÝ_YAZ
+002E   303D           00069     MOVLW A'='
+002F   2???           00070         CALL VERÝ_YAZ
+                      00071 
+0030   1283 1303      00072         banksel PORTC
+0032   3001           00073         MOVLW h'01'
+0033   0087           00074         MOVWF PORTC
+0034                  00075 DÖN1    
+0034   1283 1303      00076         BANKSEL PORTD
+0036   1C88           00077         BTFSS PORTD,1
+0037   2???           00078         GOTO DÖN1
+0038   2???           00079         CALL VERÝ_YAZ
+                      00080 
+0039   2???           00081         CALL BEKLE
+003A   2???           00082         CALL BEKLE
+                      00083 
+003B   1283 1303      00084         banksel PORTC
+003D   3004           00085         MOVLW h'04'
+003E   0087           00086         MOVWF PORTC
+003F                  00087 DÖN2    
+003F   1283 1303      00088         BANKSEL PORTD
+0041   1C08           00089         BTFSS PORTD,0
+0042   2???           00090         GOTO DÖN2
+                      00091 
+0043   2???           00092         CALL VERÝ_YAZ
+0044   2???           00093         CALL BEKLE
+0045   2???           00094         CALL BEKLE
+0046   1283 1303      00095         banksel PORTC
+0048   3002           00096         MOVLW h'02'
+0049   0087           00097         MOVWF PORTC
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+004A                  00098 DÖN3    
+004A   1283 1303      00099         BANKSEL PORTD
+004C   1C08           00100         BTFSS PORTD,0
+004D   2???           00101         GOTO DÖN3
+                      00102 
+                      00103  
+004E   2???           00104         CALL VERÝ_YAZ
+004F   2???           00105         CALL BEKLE
+0050   2???           00106         CALL BEKLE
+0051   1283 1303      00107         banksel PORTC
+0053   3002           00108         MOVLW h'02'
+0054   0087           00109         MOVWF PORTC
+0055                  00110 DÖN4    
+0055   1283 1303      00111         BANKSEL PORTD
+0057   1D88           00112         BTFSS PORTD,3
+0058   2???           00113         GOTO DÖN4
+0059   2???           00114         CALL VERÝ_YAZ
+005A   2???           00115         CALL BEKLE
+005B   2???           00116         CALL BEKLE
+005C   1283 1303      00117         banksel PORTC
+                      00118 
+005E   3080           00119         MOVLW h'80'
+005F   0087           00120         MOVWF PORTC
+                      00121         
+0060   2???           00122         CALL BEKLE
+0061   2???           00123         CALL BEKLE      
+0062   2???           00124         CALL BEKLE      
+0063   2???           00125         CALL BEKLE
+0064   2???           00126         CALL BEKLE
+0065   2???           00127         CALL BEKLE
+0066   2???           00128         CALL BEKLE
+0067   2???           00129         CALL BEKLE
+0068   2???           00130         CALL BEKLE
+0069   2???           00131         CALL BEKLE
+006A   2???           00132         CALL BEKLE
+006B   2???           00133         CALL BEKLE
+006C   2???           00134         CALL BEKLE      
+006D   2???           00135         CALL BEKLE      
+006E   2???           00136         CALL BEKLE
+006F   2???           00137         CALL BEKLE
+0070   2???           00138         CALL BEKLE
+0071   2???           00139         CALL BEKLE
+0072   2???           00140         CALL BEKLE
+0073   2???           00141         CALL BEKLE
+0074   2???           00142         CALL BEKLE
+0075   2???           00143         CALL BEKLE
+0076   2???           00144         CALL BEKLE
+0077   2???           00145         CALL BEKLE      
+0078   2???           00146         CALL BEKLE      
+0079   2???           00147         CALL BEKLE
+007A   2???           00148         CALL BEKLE
+007B   2???           00149         CALL BEKLE
+007C   2???           00150         CALL BEKLE
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+007D   2???           00151         CALL BEKLE
+007E   2???           00152         CALL BEKLE
+007F   2???           00153         CALL BEKLE
+0080   2???           00154         CALL BEKLE
+                      00155         
+0081   1283 1303      00156         banksel PORTC
+0083   0187           00157         clrf PORTC
+                      00158 
+                      00159 
+0084   3002           00160         MOVLW h'02'
+0085   2???           00161         CALL KOMUT_YAZ
+                      00162 
+0086   3002           00163         MOVLW h'02'
+0087   2???           00164         CALL KOMUT_YAZ
+                      00165 
+0088   3000           00166         MOVLW h'00'
+0089   2???           00167         CALL KOMUT_YAZ
+                      00168 
+008A   3000           00169         MOVLW h'00'
+008B   2???           00170         CALL KOMUT_YAZ
+                      00171 
+008C   300E           00172         MOVLW h'0E'
+008D   2???           00173         CALL KOMUT_YAZ
+                      00174 
+008E   3000           00175         MOVLW h'00'
+008F   2???           00176         CALL KOMUT_YAZ
+                      00177 
+0090   3006           00178         MOVLW h'06'
+0091   2???           00179         CALL KOMUT_YAZ
+                      00180 
+0092   3048           00181         MOVLW A'H'
+0093   2???           00182         CALL VERÝ_YAZ
+                      00183 
+0094   304F           00184         MOVLW A'O'
+0095   2???           00185         CALL VERÝ_YAZ
+                      00186 
+0096   3053           00187         MOVLW A'S'
+0097   2???           00188         CALL VERÝ_YAZ
+                      00189 
+0098   3047           00190         MOVLW   A'G'
+0099   2???           00191         CALL    VERÝ_YAZ
+                      00192         
+009A   3045           00193         MOVLW   A'E'
+009B   2???           00194         CALL    VERÝ_YAZ
+009C   304C           00195     MOVLW A'L'
+009D   2???           00196         CALL VERÝ_YAZ
+                      00197 
+009E   3044           00198         MOVLW A'D'
+009F   2???           00199         CALL VERÝ_YAZ
+00A0   3049           00200         MOVLW A'I'
+00A1   2???           00201         CALL VERÝ_YAZ
+                      00202 
+00A2   304E           00203         MOVLW A'N'
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00A3   2???           00204         CALL VERÝ_YAZ
+00A4   3049           00205     MOVLW A'I'
+00A5   2???           00206         CALL VERÝ_YAZ
+00A6   305A           00207         MOVLW A'Z'
+00A7   2???           00208         CALL VERÝ_YAZ
+                      00209     
+                      00210 
+00A8                  00211 SONSUZ 
+00A8   2???           00212         GOTO SONSUZ
+                      00213         
+00A9                  00214 KOMUT_YAZ
+00A9   00A2           00215         MOVWF VERÝ
+00AA   16A2           00216         BSF VERÝ,5
+00AB   1222           00217         BCF VERÝ,4
+00AC   0822           00218         MOVF VERÝ,W
+00AD   0086           00219         MOVWF PORTB
+00AE   2???           00220         CALL BEKLE
+00AF   2???           00221         CALL DÝSABLE
+00B0   2???           00222         CALL BEKLE
+00B1   0008           00223         RETURN
+                      00224 
+00B2                  00225 VERÝ_YAZ
+00B2   00A2           00226         MOVWF VERÝ
+00B3   0E22           00227         SWAPF VERÝ,W
+00B4   2???           00228         CALL GÖNDER
+00B5   0822           00229         MOVF VERÝ,W
+00B6   2???           00230         CALL GÖNDER
+00B7   0008           00231         RETURN
+                      00232 
+00B8                  00233 GÖNDER
+00B8   1283 1303      00234         BANKSEL PORTB
+00BA   0086           00235         MOVWF PORTB
+00BB   1686           00236         BSF PORTB,5
+00BC   1606           00237         BSF PORTB,4
+00BD   2???           00238         CALL BEKLE
+00BE   2???           00239         CALL DÝSABLE
+00BF   2???           00240         CALL BEKLE
+00C0   0008           00241         RETURN
+                      00242 
+                      00243 
+00C1                  00244 DÝSABLE
+00C1   1283 1303      00245         BANKSEL PORTB
+00C3   1286           00246         BCF PORTB,5
+00C4   1206           00247         BCF PORTB,4
+00C5   0008           00248         RETURN
+                      00249 
+00C6                  00250 BEKLE
+00C6   300F           00251         MOVLW h'0F'
+00C7   00A0           00252         MOVWF SAYAC0
+00C8                  00253 DÖNGU
+00C8   30FF           00254         MOVLW h'FF'
+00C9   00A1           00255         MOVWF SAYAC1
+00CA                  00256 DÖN
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00CA   0BA1           00257         DECFSZ SAYAC1,1
+00CB   2???           00258         GOTO DÖN
+00CC   0BA0           00259         DECFSZ SAYAC0,1
+00CD   2???           00260         GOTO DÖNGU
+00CE   0008           00261         RETURN
+                      00262 
+Warning[205]: Found directive in column 1. (END)
+                      00263 END
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANA_PROGRAM                       00000000
+BCLIE                             00000003
+BCLIF                             00000003
+BEKLE                             000000C6
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CKE                               00000006
+CKP                               00000004
+CREN                              00000004
+CSRC                              00000007
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+D_A                               00000005
+DÖN                               000000CA
+DÖN1                              00000034
+DÖN2                              0000003F
+DÖN3                              0000004A
+DÖN4                              00000055
+DÖNGU                             000000C8
+DÝSABLE                           000000C1
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+GÖNDER                            000000B8
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KOMUT_YAZ                         000000A9
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SAYAC0                            00000020
+SAYAC1                            00000021
+SEN                               00000000
+SMP                               00000007
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SONSUZ                            000000A8
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+MPASM  5.35                      UNTITLED.ASM   5-19-2011  23:37:24         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+VERÝ                              00000022
+VERÝ_YAZ                          000000B2
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00000FCF
+_CP_HALF                          00001FDF
+_CP_OFF                           00003FFF
+_CP_UPPER_256                     00002FEF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_ENABLE_OFF                   00003DFF
+_WRT_ENABLE_ON                    00003FFF
+_XT_OSC                           00003FFD
+__16F877                          00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     4 reported,     0 suppressed
+Messages :     3 reported,     0 suppressed
+
+

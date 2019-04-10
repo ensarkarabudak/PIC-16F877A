@@ -1,0 +1,57 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Thu May 19 23:37:25 2011
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00019e
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000ce      
+                            0x001800    0x001801      
+            209 out of 8453 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000000    program     static E:\PIC\SINAV\Untitled.asm
+                    BEKLE   0x0000c6    program     static E:\PIC\SINAV\Untitled.asm
+                      DÖN   0x0000ca    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN1   0x000034    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN2   0x00003f    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN3   0x00004a    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN4   0x000055    program     static E:\PIC\SINAV\Untitled.asm
+                    DÖNGU   0x0000c8    program     static E:\PIC\SINAV\Untitled.asm
+                  DÝSABLE   0x0000c1    program     static E:\PIC\SINAV\Untitled.asm
+                   GÖNDER   0x0000b8    program     static E:\PIC\SINAV\Untitled.asm
+                KOMUT_YAZ   0x0000a9    program     static E:\PIC\SINAV\Untitled.asm
+                   SONSUZ   0x0000a8    program     static E:\PIC\SINAV\Untitled.asm
+                 VERÝ_YAZ   0x0000b2    program     static E:\PIC\SINAV\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000000    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN1   0x000034    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN2   0x00003f    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN3   0x00004a    program     static E:\PIC\SINAV\Untitled.asm
+                     DÖN4   0x000055    program     static E:\PIC\SINAV\Untitled.asm
+                   SONSUZ   0x0000a8    program     static E:\PIC\SINAV\Untitled.asm
+                KOMUT_YAZ   0x0000a9    program     static E:\PIC\SINAV\Untitled.asm
+                 VERÝ_YAZ   0x0000b2    program     static E:\PIC\SINAV\Untitled.asm
+                   GÖNDER   0x0000b8    program     static E:\PIC\SINAV\Untitled.asm
+                  DÝSABLE   0x0000c1    program     static E:\PIC\SINAV\Untitled.asm
+                    BEKLE   0x0000c6    program     static E:\PIC\SINAV\Untitled.asm
+                    DÖNGU   0x0000c8    program     static E:\PIC\SINAV\Untitled.asm
+                      DÖN   0x0000ca    program     static E:\PIC\SINAV\Untitled.asm
+
+

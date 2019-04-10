@@ -1,0 +1,5 @@
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPASM SUITE\P16F877.INC 33 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[207] D:\MPLAB\ODEV9\ODEV9.ASM 3 : Found label after column 1. (CARPAN)
+Message[302] D:\MPLAB\ODEV9\ODEV9.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MPLAB\ODEV9\ODEV9.ASM 22 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\MPLAB\ODEV9\ODEV9.ASM 57 : Found directive in column 1. (END)

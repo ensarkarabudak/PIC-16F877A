@@ -1,0 +1,7 @@
+Warning[207] E:\PIC\SINAV\UNTITLED.ASM 4 : Found label after column 1. (SAYAC0)
+Warning[207] E:\PIC\SINAV\UNTITLED.ASM 5 : Found label after column 1. (SAYAC1)
+Warning[207] E:\PIC\SINAV\UNTITLED.ASM 6 : Found label after column 1. (VERÝ)
+Message[302] E:\PIC\SINAV\UNTITLED.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC\SINAV\UNTITLED.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC\SINAV\UNTITLED.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] E:\PIC\SINAV\UNTITLED.ASM 263 : Found directive in column 1. (END)
