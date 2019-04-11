@@ -1,0 +1,5 @@
+Warning[207] E:\PIC PROJECT\öDEV3\öDEV3.ASM 4 : Found label after column 1. (SAYAC0)
+Warning[207] E:\PIC PROJECT\öDEV3\öDEV3.ASM 5 : Found label after column 1. (SAYAC1)
+Message[302] E:\PIC PROJECT\öDEV3\öDEV3.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC PROJECT\öDEV3\öDEV3.ASM 21 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC PROJECT\öDEV3\öDEV3.ASM 33 : Register in operand not in bank 0.  Ensure that bank bits are correct.

@@ -1,0 +1,419 @@
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #INCLUDE <P16F877.INC>
+                      00001         LIST
+                      00002 ; P16F877.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00373         LIST
+                      00002 
+Warning[207]: Found label after column 1. (SAYAC)
+  00000021            00003         SAYAC   EQU             0X21
+Warning[207]: Found label after column 1. (INTX)
+  00000022            00004         INTX    EQU             0X22
+0000                  00005         ORG     0X00
+0000   2805           00006         GOTO    START
+0004                  00007         ORG     0X04
+0004   2829           00008         GOTO    KESME
+0005                  00009 START
+0005   30C0           00010         MOVLW   B'11000000' 
+0006   008B           00011         MOVWF   INTCON
+0007   1683           00012         BSF             STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   140C           00013         BSF             PIE1,0
+0009   1683 1303      00014         BANKSEL TRISB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000B   0186           00015         CLRF    TRISB        
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000C   0188           00016         CLRF    TRISD
+000D   1283           00017         BCF             STATUS,RP0
+000E   3011           00018         MOVLW   B'00010001'                       
+000F   0090           00019         MOVWF   T1CON
+0010   3001           00020         MOVLW   D'1'
+0011   00A1           00021         MOVWF   SAYAC
+                      00022         
+0012   3001           00023         MOVLW   0X01
+0013   0086           00024         MOVWF   PORTB
+0014   3001           00025         MOVLW   0X01
+0015   0088           00026         MOVWF   PORTD
+                      00027 
+0016   30FA           00028         MOVLW   D'250'
+0017   00A2           00029         MOVWF   INTX
+0018   30D1           00030         MOVLW   B'11010001'
+0019   1683 1303      00031         BANKSEL OPTION_REG
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+001B   0081           00032         MOVWF   OPTION_REG
+                      00033 
+001C   1283 1303      00034         BANKSEL TMR0
+001E   3006           00035         MOVLW   D'6'
+001F   0081           00036         MOVWF   TMR0
+0020   1283 1303      00037         BANKSEL INTCON
+0022   168B           00038         BSF             INTCON,D'5'
+0023   178B           00039         BSF             INTCON,D'7'
+0024   3015           00040         MOVLW   H'15'
+0025   008F           00041         MOVWF   TMR1H
+0026   30A0           00042         MOVLW   H'A0'
+0027   008E           00043         MOVWF   TMR1L
+0028   2853           00044         GOTO    DON
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0029                  00045 KESME
+0029   1D0B           00046         BTFSS   INTCON,2
+002A   282E           00047         GOTO    $+4
+002B   0BA2           00048         DECFSZ  INTX,1
+002C   2833           00049         GOTO    TMR0_DENE
+002D   2037           00050         CALL    PORTB_YAK
+002E   1C0C           00051         BTFSS   PIR1,0
+002F   0009           00052         RETFIE
+0030   0BA1           00053         DECFSZ  SAYAC,1
+0031   2840           00054         GOTO    DENE
+0032   2848           00055         GOTO    YAK
+0033                  00056 TMR0_DENE
+0033   3006           00057         MOVLW   D'6'
+0034   0081           00058         MOVWF   TMR0
+0035   110B           00059         BCF             INTCON,2
+0036   0009           00060         RETFIE
+0037                  00061 PORTB_YAK       
+0037   1283 1303      00062         BANKSEL PORTB
+Message[305]: Using default destination of 1 (file).
+0039   0D86           00063         RLF             PORTB
+003A   3006           00064         MOVLW   D'6'
+003B   0081           00065         MOVWF   TMR0
+003C   30FA           00066         MOVLW   D'250'
+003D   00A2           00067         MOVWF   INTX
+003E   110B           00068         BCF             INTCON,2
+003F   0008           00069         RETURN
+0040                  00070 DENE
+0040   1283 1303      00071         BANKSEL PIR1
+0042   100C           00072         BCF             PIR1,0
+0043   3015           00073         MOVLW   H'15'
+0044   008F           00074         MOVWF   TMR1H
+0045   30A0           00075         MOVLW   H'A0'
+0046   008E           00076         MOVWF   TMR1L
+0047   0009           00077         RETFIE
+0048                  00078 YAK     
+0048   1283 1303      00079         BANKSEL PIR1
+004A   100C           00080         BCF             PIR1,0
+Message[305]: Using default destination of 1 (file).
+004B   0C88           00081         RRF             PORTD
+004C   3015           00082         MOVLW   H'15'
+004D   008F           00083         MOVWF   TMR1H
+004E   30A0           00084         MOVLW   H'A0'
+004F   008E           00085         MOVWF   TMR1L
+0050   3001           00086         MOVLW   D'1'
+0051   00A1           00087         MOVWF   SAYAC
+0052   0009           00088         RETFIE
+0053                  00089 DON
+0053   2853           00090         GOTO    DON
+Warning[205]: Found directive in column 1. (END)
+                      00091 END
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CKE                               00000006
+CKP                               00000004
+CREN                              00000004
+CSRC                              00000007
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+DENE                              00000040
+DON                               00000053
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+D_A                               00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+INTX                              00000022
+IRP                               00000007
+KESME                             00000029
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTB_YAK                         00000037
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SAYAC                             00000021
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+START                             00000005
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0_DENE                         00000033
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+YAK                               00000048
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00000FCF
+_CP_HALF                          00001FDF
+_CP_OFF                           00003FFF
+_CP_UPPER_256                     00002FEF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_ENABLE_OFF                   00003DFF
+_WRT_ENABLE_ON                    00003FFF
+_XT_OSC                           00003FFD
+__16F877                          00000001
+__DEBUG                           1
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXX------------ ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    81
+Program Memory Words Free:  8111
+
+
+MPASM  5.37                        DENEME.ASM   11-10-2015  2:20:01         PAGE  8
+
+
+
+
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     6 reported,     0 suppressed
+
+

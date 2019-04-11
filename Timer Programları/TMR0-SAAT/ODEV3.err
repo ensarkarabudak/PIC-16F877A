@@ -1,0 +1,12 @@
+Warning[205] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 1 : Found directive in column 1. (LIST)
+Warning[205] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 3 : Found directive in column 1. (__config)
+Warning[205] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 13 : Found directive in column 1. (ORG)
+Warning[205] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 16 : Found directive in column 1. (ORG)
+Message[305] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 27 : Using default destination of 1 (file).
+Message[305] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 42 : Using default destination of 1 (file).
+Message[302] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 55 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 57 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 58 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 61 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 90 : Found opcode in column 1. (GOTO)
+Warning[205] C:\USERS\MAKRO\DOCUMENTS\MICRO\ODEV3\ODEV3.ASM 113 : Found directive in column 1. (END)

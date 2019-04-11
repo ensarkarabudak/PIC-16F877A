@@ -1,0 +1,38 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Dec 27 00:51:25 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x00003a
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000020      
+            30 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              Ana_program   0x00000d    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+                    Dongu   0x000020    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+                    Kesme   0x000004    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    Kesme   0x000004    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+              Ana_program   0x00000d    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+                    Dongu   0x000020    program     static C:\Users\Google\Desktop\Mikro\8_Timer2_Sayici\Timer2_Sayici.asm
+
+

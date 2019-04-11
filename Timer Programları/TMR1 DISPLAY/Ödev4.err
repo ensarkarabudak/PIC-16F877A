@@ -1,0 +1,7 @@
+Warning[207] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 1 : Found label after column 1. (Listp)
+Message[301] C:\PROGRAM FILES\MICROCHIP\MPASM SUITE\P16F877A.INC 37 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[207] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 4 : Found label after column 1. (SAYAC)
+Message[302] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 32 : Found label after column 1. (son)
+Message[305] E:\PIC PROJECT\öDEV2\ÖDEV2_LED TMR0\ÖDEV4.ASM 42 : Using default destination of 1 (file).

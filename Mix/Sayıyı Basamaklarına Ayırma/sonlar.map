@@ -1,0 +1,36 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sun Dec 13 21:31:48 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000030
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000017      
+            24 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              BIRLER_KONT   0x000014    program     static D:\sonlar\sonlar.asm     
+               ONLAR_KONT   0x00000a    program     static D:\sonlar\sonlar.asm     
+              YUZLER_KONT   0x000002    program     static D:\sonlar\sonlar.asm     
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              YUZLER_KONT   0x000002    program     static D:\sonlar\sonlar.asm     
+               ONLAR_KONT   0x00000a    program     static D:\sonlar\sonlar.asm     
+              BIRLER_KONT   0x000014    program     static D:\sonlar\sonlar.asm     
+
+

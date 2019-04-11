@@ -1,0 +1,45 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Thu Dec 02 22:30:22 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000004
+                   .org_1       code   0x000004    program   0x000046
+                   .cinit    romdata   0x001800    program   0x000004
+  .config_2007_UNTITLED.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000001      
+                            0x000004    0x000026      
+                            0x001800    0x001801      
+                            0x002007    0x002007      
+            40 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   ANA_J1   0x000026    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                 ANA_PROG   0x000025    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                ILK_ISLEM   0x000014    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                INTERRUPT   0x000004    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                   INT_J1   0x000013    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                INTERRUPT   0x000004    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                   INT_J1   0x000013    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                ILK_ISLEM   0x000014    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                 ANA_PROG   0x000025    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+                   ANA_J1   0x000026    program     static C:\Users\Harun\Desktop\PIC\MpLab\16f877\TMR0\Untitled.asm
+
+

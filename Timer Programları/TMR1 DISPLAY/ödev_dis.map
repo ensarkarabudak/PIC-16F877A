@@ -1,0 +1,37 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Oct 25 14:34:36 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000022
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000010      
+                            0x001800    0x001801      
+            19 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DONGU   0x000008    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+                   DONGU2   0x000009    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+            Sayac1_Doldur   0x00000e    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DONGU   0x000008    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+                   DONGU2   0x000009    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+            Sayac1_Doldur   0x00000e    program     static C:\Users\Muhendis\Documents\PIC project\deneme4\Ödev4.asm
+
+

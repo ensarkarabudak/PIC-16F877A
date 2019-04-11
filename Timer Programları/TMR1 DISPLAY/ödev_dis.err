@@ -1,0 +1,7 @@
+Warning[207] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 4 : Found label after column 1. (SAYAC)
+Warning[207] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 5 : Found label after column 1. (SAYAC1)
+Message[302] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 26 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 42 : Using default destination of 1 (file).
+Message[305] E:\PIC PROJECT\öDEV2\öDEV2-DISP TMR1\öDEV_DIS.ASM 50 : Using default destination of 1 (file).

@@ -1,0 +1,8 @@
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 1 : Found directive in column 1. (list)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 2 : Found directive in column 1. (include)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 4 : Found directive in column 1. (cblock)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 8 : Found directive in column 1. (ENDC)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 10 : Found directive in column 1. (ORG)
+Message[302] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 13 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 18 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\GECIKME PROGRAMLARý\4 -- DISPLAY SAYýCý\DOS.ASM 90 : Found directive in column 1. (END)

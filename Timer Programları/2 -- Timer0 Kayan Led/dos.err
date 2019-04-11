@@ -1,0 +1,9 @@
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 1 : Found directive in column 1. (list)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 2 : Found directive in column 1. (include)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 6 : Found directive in column 1. (ORG)
+Warning[203] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 7 : Found opcode in column 1. (goto)
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 8 : Found directive in column 1. (ORG)
+Warning[203] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 9 : Found opcode in column 1. (goto)
+Message[302] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 18 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\YENI KLASöR\100MICRO çALýþMALAR\TIMER PROGRAMLARý\2 -- TIMER0 KAYAN LED\DOS.ASM 39 : Found directive in column 1. (END)

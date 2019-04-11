@@ -1,0 +1,45 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Mon Oct 24 15:52:39 2011
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x000054
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x00002d      
+                            0x001800    0x001801      
+            45 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 ANA_PROG   0x000005    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                      CIK   0x000025    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                    KESME   0x00001d    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+               LED_SONDUR   0x00002a    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                  LED_YAK   0x000026    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+             _.org_1_001C   0x00001c    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 ANA_PROG   0x000005    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+             _.org_1_001C   0x00001c    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                    KESME   0x00001d    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                      CIK   0x000025    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+                  LED_YAK   0x000026    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+               LED_SONDUR   0x00002a    program     static C:\Users\Yaman\Desktop\timer1 ile led yak sondur\timer1 led.asm
+
+

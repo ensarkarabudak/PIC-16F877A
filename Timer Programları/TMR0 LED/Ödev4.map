@@ -1,0 +1,39 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Mon Dec 27 14:22:28 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x00004e
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x00002a      
+                            0x001800    0x001801      
+            42 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ana_program   0x000005    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+                    kesme   0x00001c    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+                      son   0x00001b    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ana_program   0x000005    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+                      son   0x00001b    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+                    kesme   0x00001c    program     static E:\ÇALIÞMA\TMR0 LED\Ödev4.asm
+
+

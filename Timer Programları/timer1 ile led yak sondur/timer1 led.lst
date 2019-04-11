@@ -1,0 +1,386 @@
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (list)
+                      00001 list p =16F877A
+                      00002 #include <p16F877A.inc>
+                      00001         LIST
+                      00002 ; P16F877A.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00400         LIST
+                      00003 
+Warning[205]: Found directive in column 1. (ORG)
+                      00004 ORG 0X00
+Warning[203]: Found opcode in column 1. (GOTO)
+0000   2???           00005 GOTO ANA_PROG
+Warning[205]: Found directive in column 1. (ORG)
+                      00006 ORG 0X04
+Warning[203]: Found opcode in column 1. (GOTO)
+0004   2???           00007 GOTO KESME
+                      00008 
+0005                  00009 ANA_PROG
+0005   1683 1303      00010         BANKSEL TRISB
+0007   3000           00011         MOVLW h'00'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   0086           00012         MOVWF TRISB
+0009   1283 1303      00013         BANKSEL PORTB
+000B   0186           00014         CLRF PORTB
+000C   1283 1303      00015         BANKSEL INTCON
+000E   178B           00016         BSF INTCON,7
+000F   170B           00017         BSF INTCON,6
+0010   1283 1303      00018         BANKSEL T1CON
+0012   3001           00019         MOVLW h'01'
+0013   0090           00020         MOVWF T1CON
+0014   1683 1303      00021         BANKSEL PIE1
+0016   3001           00022         MOVLW h'1'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0017   008C           00023         MOVWF PIE1
+0018   1283 1303      00024         BANKSEL PIR1
+001A   3000           00025         MOVLW h'00'
+001B   008C           00026         MOVWF PIR1
+                      00027 
+Warning[203]: Found opcode in column 1. (GOTO)
+001C   2???           00028 GOTO $
+                      00029 
+001D                  00030 KESME
+001D   1C0C           00031         BTFSS PIR1,0
+001E   0009           00032         RETFIE
+001F   100C           00033         BCF PIR1,0
+0020   1283 1303      00034         BANKSEL PORTB
+0022   1C06           00035         BTFSS PORTB,0
+0023   2???           00036         GOTO LED_YAK
+0024   2???           00037         GOTO LED_SONDUR
+0025                  00038 CIK
+0025   0009           00039         RETFIE
+                      00040 
+0026                  00041 LED_YAK
+0026   1283 1303      00042         BANKSEL PORTB
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0028   1406           00043         BSF PORTB,0
+0029   2???           00044         GOTO CIK
+                      00045 
+                      00046 
+002A                  00047 LED_SONDUR
+002A   1283 1303      00048         BANKSEL PORTB
+002C   1006           00049         BCF PORTB,0
+002D   2???           00050         GOTO CIK
+Warning[205]: Found directive in column 1. (END)
+                      00051 END
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANA_PROG                          00000005
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIK                               00000025
+CIS                               00000003
+CKE                               00000006
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KESME                             0000001D
+LED_SONDUR                        0000002A
+LED_YAK                           00000026
+NOT_A                             00000005
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_.org_1_001C                      0000001C
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+MPASM  5.35                    TIMER1 LED.ASM   10-24-2011  15:52:38         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     7 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

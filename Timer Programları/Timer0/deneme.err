@@ -1,0 +1,9 @@
+Warning[207] D:\MPLAB\DENEMELER\DENEME.ASM 3 : Found label after column 1. (SAYAC)
+Warning[207] D:\MPLAB\DENEMELER\DENEME.ASM 4 : Found label after column 1. (INTX)
+Message[302] D:\MPLAB\DENEMELER\DENEME.ASM 13 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MPLAB\DENEMELER\DENEME.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MPLAB\DENEMELER\DENEME.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MPLAB\DENEMELER\DENEME.ASM 32 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] D:\MPLAB\DENEMELER\DENEME.ASM 63 : Using default destination of 1 (file).
+Message[305] D:\MPLAB\DENEMELER\DENEME.ASM 81 : Using default destination of 1 (file).
+Warning[205] D:\MPLAB\DENEMELER\DENEME.ASM 91 : Found directive in column 1. (END)

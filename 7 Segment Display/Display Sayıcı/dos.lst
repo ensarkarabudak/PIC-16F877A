@@ -1,0 +1,422 @@
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (list)
+                      00001 list                    p=16f877
+Warning[205]: Found directive in column 1. (include)
+                      00002 include         "p16f877.inc"
+                      00001         LIST
+                      00002 ; P16F877.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00373         LIST
+                      00003 
+Warning[205]: Found directive in column 1. (cblock)
+                      00004 cblock          0x20
+  00000020            00005 sayac0
+  00000021            00006 sayac1
+  00000022            00007 sayac2
+Warning[205]: Found directive in column 1. (ENDC)
+                      00008 endc
+                      00009 
+Warning[205]: Found directive in column 1. (ORG)
+0000                  00010 ORG                     0
+0000                  00011 anaprogram
+0000   1683 1303      00012                         banksel                 TRISD
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0188           00013                         clrf                            TRISD
+0003   1283 1303      00014                         banksel                 PORTD
+0005   0188           00015                         clrf                            PORTD
+0006   1683 1303      00016                         banksel                 TRISA
+0008   30F0           00017                         movlw                   b'11110000'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0085           00018                         movwf                   TRISA
+000A   1283 1303      00019                         banksel                 PORTA
+000C   300E           00020                         movlw                   b'00001110'
+000D   0085           00021                         movwf                   PORTA
+000E                  00022 yak0
+000E   303F           00023                         movlw                   b'00111111'
+000F   0088           00024                         movwf                   PORTD
+0010   300A           00025                         movlw                   d'10'
+0011   2037           00026                         call                            gecikme
+0012                  00027 yak1
+0012   3006           00028                         movlw                   b'00000110'
+0013   0088           00029                         movwf                   PORTD
+0014   300A           00030                         movlw                   d'10'
+0015   2037           00031                         call                            gecikme
+0016                  00032 yak2
+0016   305B           00033                         movlw                   b'01011011'
+0017   0088           00034                         movwf                   PORTD
+0018   300A           00035                         movlw                   d'10'
+0019   2037           00036                         call                            gecikme
+001A                  00037 yak3
+001A   304F           00038                         movlw                   b'01001111'
+001B   0088           00039                         movwf                   PORTD
+001C   300A           00040                         movlw                   d'10'
+001D   2037           00041                         call                            gecikme
+001E                  00042 yak4
+001E   3066           00043                         movlw                   b'01100110'
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+001F   0088           00044                         movwf                   PORTD
+0020   300A           00045                         movlw                   d'10'
+0021   2037           00046                         call                            gecikme
+0022                  00047 yak5
+0022   306D           00048                         movlw                   b'01101101'
+0023   0088           00049                         movwf                   PORTD
+0024   300A           00050                         movlw                   d'10'
+0025   2037           00051                         call                            gecikme
+0026                  00052 yak6
+0026   307D           00053                         movlw                   b'01111101'
+0027   0088           00054                         movwf                   PORTD
+0028   300A           00055                         movlw                   d'10'
+0029   2037           00056                         call                            gecikme
+002A                  00057 yak7
+002A   3007           00058                         movlw                   b'00000111'
+002B   0088           00059                         movwf                   PORTD
+002C   300A           00060                         movlw                   d'10'
+002D   2037           00061                         call                            gecikme
+002E                  00062 yak8
+002E   307F           00063                         movlw                   b'01111111'
+002F   0088           00064                         movwf                   PORTD
+0030   300A           00065                         movlw                   d'10'
+0031   2037           00066                         call                            gecikme
+0032                  00067 yak9
+0032   306F           00068                         movlw                   b'01101111'
+0033   0088           00069                         movwf                   PORTD
+0034   300A           00070                         movlw                   d'10'
+0035   2037           00071                         call                            gecikme
+0036   280E           00072                         goto                            yak0
+                      00073                         
+0037                  00074 gecikme
+0037   00A0           00075                         movwf                   sayac0
+0038                  00076 dongu0
+0038   30FF           00077                         movlw                   d'255'
+0039   00A1           00078                         movwf                   sayac1
+003A                  00079 dongu1
+003A   30FF           00080                         movlw                   d'255'
+003B   00A2           00081                         movwf                   sayac2
+003C                  00082 dongu2
+003C   0BA2           00083                         decfsz                  sayac2,F
+003D   283C           00084                         goto                            dongu2
+003E   0BA1           00085                         decfsz                  sayac1,F
+003F   283A           00086                         goto                            dongu1
+0040   0BA0           00087                         decfsz                  sayac0,F
+0041   2838           00088                         goto                            dongu0
+0042   0008           00089                         return
+Warning[205]: Found directive in column 1. (END)
+                      00090 END 
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CKE                               00000006
+CKP                               00000004
+CREN                              00000004
+CSRC                              00000007
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+EEADR                             0000010D
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00000FCF
+_CP_HALF                          00001FDF
+_CP_OFF                           00003FFF
+_CP_UPPER_256                     00002FEF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_ENABLE_OFF                   00003DFF
+_WRT_ENABLE_ON                    00003FFF
+_XT_OSC                           00003FFD
+__16F877                          00000001
+__DEBUG                           1
+anaprogram                        00000000
+dongu0                            00000038
+dongu1                            0000003A
+dongu2                            0000003C
+gecikme                           00000037
+sayac0                            00000020
+sayac1                            00000021
+sayac2                            00000022
+yak0                              0000000E
+yak1                              00000012
+yak2                              00000016
+yak3                              0000001A
+yak4                              0000001E
+yak5                              00000022
+yak6                              00000026
+yak7                              0000002A
+yak8                              0000002E
+yak9                              00000032
+MPASM  5.37                           DOS.ASM   12-27-2010  20:39:52         PAGE  8
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXX------------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    67
+Program Memory Words Free:  8125
+
+
+Errors   :     0
+Warnings :     6 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

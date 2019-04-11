@@ -1,0 +1,9 @@
+Warning[205] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 2 : Found directive in column 1. (include)
+Warning[205] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 7 : Found directive in column 1. (org)
+Warning[203] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 8 : Found opcode in column 1. (goto)
+Warning[205] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 9 : Found directive in column 1. (org)
+Warning[203] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 10 : Found opcode in column 1. (goto)
+Message[302] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 36 : Using default destination of 1 (file).
+Warning[205] C:\USERS\HARUN\DESKTOP\PIC\MPLAB\HADI AMA\UNTITLED.ASM 38 : Found directive in column 1. (end)

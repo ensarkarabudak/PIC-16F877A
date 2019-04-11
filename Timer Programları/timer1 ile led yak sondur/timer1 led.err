@@ -1,0 +1,9 @@
+Warning[205] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 1 : Found directive in column 1. (list)
+Warning[205] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 4 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 5 : Found opcode in column 1. (GOTO)
+Warning[205] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 6 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 7 : Found opcode in column 1. (GOTO)
+Message[302] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 23 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 28 : Found opcode in column 1. (GOTO)
+Warning[205] C:\USERS\YAMAN\DESKTOP\TIMER1 ILE LED YAK SONDUR\TIMER1 LED.ASM 51 : Found directive in column 1. (END)

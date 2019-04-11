@@ -1,0 +1,41 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Mon Nov 08 13:51:43 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000004    program   0x00007c
+                   .cinit    romdata   0x001800    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000041      
+                            0x001800    0x001801      
+            65 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000005    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+                    KESME   0x00002b    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+               KONTROL_ET   0x000020    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+                  LOOK_UP   0x000030    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              ANA_PROGRAM   0x000005    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+               KONTROL_ET   0x000020    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+                    KESME   0x00002b    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+                  LOOK_UP   0x000030    program     static E:\PIC project\ödev2\ödev2-disp tmr1\ödev_dis.asm
+
+
