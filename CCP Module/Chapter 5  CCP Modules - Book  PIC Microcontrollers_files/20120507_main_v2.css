@@ -1,0 +1,1105 @@
+/*
+
+v2 STYLE SHEET FOR http://www.mikroe.com
+
+Created by Marko Jovanovic
+
+marko@mikroe.com
+
+
+ToC
+
+1. defaults
+2. structure
+3. typography
+4. links and navigation
+5. fonts
+6. images
+7. forms styling
+8. table styling
+9. message boxes
+10. definition lists
+
+Notes
+
+
+*/
+
+#content_wrapper{   
+   width:819px;
+   float:left;
+   background: #fff url(/img/default/devs_v2/right_sidebar_shadow.png) repeat-y right top;
+}
+
+#grey_wrapper{
+   background-color: #e6e6e6;
+}
+
+/* --- breadcrumbs v2 --- */
+
+#breadcrumbs_v2{
+  width:100%;
+  background: #F0F0F0 url(/img/default/devs_v2/breadcrumbs_bottom_shadow.png) no-repeat center bottom;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin:0;
+}
+
+#breadcrumbs_v2 ul{        
+    padding: 0;
+    margin-left:25px;
+}
+
+#breadcrumbs_v2 li {    
+    display: inline;
+    background: url(/img/default/devs_v2/breadcrumb_bullet.png) 0 68% no-repeat;
+    padding: 0 4px 0 10px;
+    font-family: Verdana;
+    font-size: 0.6em;        
+}
+
+#breadcrumbs_v2 li a{
+    text-decoration: none;
+    color:#808080;
+}    
+
+#breadcrumbs_v2 li a:hover{
+    text-decoration: underline;
+}    
+
+/* --- Compilers v2 defaults --- */
+
+#compiler_v2{      
+   width:808px;
+   height: 492px;
+   float:left;   
+   padding:0;
+   margin:0;
+}
+
+#compiler_v2 div.hide{
+  display: none;  
+}  
+
+#compilers_sidebar{ 
+   position: relative;
+   float: right;         
+   padding-top: 32px;
+   margin-top:504px;
+   width:181px;
+   background: #fff url(/img/default/devs_v2/sidebar_shadow_nav.png) repeat-x left top;
+}              
+
+#compilers_sidebar h2{ 
+   font: 0.8em Arial;
+   padding-top: 5px;
+   font-weight: bold;
+   text-align: center;
+   
+   color:#808080;
+   height: 36px;
+   background: #fff url(/img/default/devs_v2/sidebar_title_sprite.png) repeat-x left top;
+}              
+
+#compilers_sidebar .related_thumb{
+   margin-top: 15px; 
+   background: #fff url(/img/default/devs_v2/related_sprite.png) repeat-x left bottom;
+}
+
+#compilers_sidebar .related_thumb img{
+   margin-left: 18px;   
+}
+
+#compilers_sidebar .related_thumb h3{
+   width:100%;
+   font: 0.8em Arial; 
+   text-align: center;
+   margin-bottom: 10px; 
+}
+
+#compilers_sidebar .related_thumb h3 a{ 
+   color: #4D4D4D;
+}
+
+#compilers_sidebar .buy_related{ 
+   width:100%;
+   height: 18px;      
+   background: #fff url(/img/default/devs_v2/related_bar_sprite.png) repeat-x left top;   
+   padding-top: 2px;
+}
+
+#compilers_sidebar .buy_related p{
+   float:left;
+   width: 70px;   
+   
+   color: #12AA38;
+   font: 0.7em Arial;
+   font-weight: bold;   
+   
+   margin-left: 5px;
+}
+
+#compilers_sidebar .buy_related a{ 
+   float: right;
+   background: transparent url(/img/default/devs_v2/related_buy.png) no-repeat left center;
+   padding-left: 10px;
+   width: 30px;
+   color:#F17C21;   
+      
+   font: 0.7em Arial;
+   font-weight: bold;
+}
+
+/* --- Ordering v2 --- */
+
+.order_wrapper{
+  width:805px;
+  background: transparent url(/img/default/ordering_v2/top_separator.png) no-repeat center top;
+  padding-top:9px;
+}
+
+#order_v2{  
+  width:805px;
+  background: #fff url(/img/default/ordering_v2/order_sprite.png) repeat-x left top;
+}
+
+#order_v2 .two_co{
+  width:200px;
+  float:left;
+  margin-left: 24px;  
+  margin-top: 10px;
+  padding-right: 12px;
+  background: transparent url(/img/default/ordering_v2/two_co_separator.png) no-repeat right center;
+}
+
+#order_v2 .two_co p{
+  margin-top: 10px;
+  font: 0.75em Arial;    
+  line-height: 1.4em;
+  color:#808080;
+}
+
+#order_v2 .delivery{   
+   margin-top:8px;
+   margin-left:5px;
+   float:left;
+}
+
+#order_v2 .delivery p{
+   margin:0;
+   margin-bottom:8px;
+   font-family: Arial;       
+   font-size: 0.75em;    
+}
+
+#order_v2 .delivery img{
+   float:left; 
+}
+      
+#order_v2 .delivery ul{
+   float:left;
+   padding-left: 7px;
+   font-family: Arial;       
+   font-size: 0.7em; 
+   list-style: none;
+} 
+
+#order_v2 .delivery ul li{
+   color: #808080;
+} 
+
+#order_v2 .delivery ul li b{
+   color: #000;
+} 
+
+#order_v2 .buyitems{
+  width:544px;
+  float:left;
+  margin:0;
+  padding:0;
+  margin-left: 0;
+  margin-top: 8px;
+}
+   
+#order_v2 .buyitems ul{        
+    width:98%; 
+    font-family: Arial;       
+    font-size: 0.75em;            
+    font-weight: bold;        
+    padding-left:10px;
+    list-style-type: none;
+}    
+
+
+
+#order_v2 .buyitems ul li{   
+   display: block;
+   clear: both;
+   margin:0;
+   padding-left:10px;
+   padding-top:3px;
+   padding-bottom:3px;
+   background: #F2F2F2 none;    
+}    
+
+
+
+#order_v2 .buyitems ul li a{
+   float:right;
+}        
+
+
+
+#order_v2 .buyitems ul li img{       
+   position: relative;
+   top:-5px;
+}        
+
+
+
+#order_v2 .buyitems ul .optional{
+   padding:0;
+   padding-left:5px;   
+   padding-bottom:6px;
+   background: #ffffff none; 
+   color: #808080;
+   border: 0;
+}
+
+
+
+#order_v2 .buyitems ul .priceorder{
+   float:right;
+   padding-right:5px;
+   color: #39B54A;
+}    
+
+/* --- Product selector --- */ 
+
+    #pselector{
+      width:100%;
+      text-align: left;
+    }
+
+    #pselector h1{
+      margin-left: 20px;  
+      text-align: left; 
+      padding-top: 8px;     
+      padding-bottom: 8px;     
+    }
+
+    #pselector h1.mainHeading {
+            position: relative;
+            width: 415px;
+            height: 47px;
+            overflow: hidden;
+            font-size: 20px;
+            line-height: 1em;
+            }
+
+    #pselector h1.mainHeading span {
+            position: absolute;
+            background: #fff url(/img/default/selector/selector_title.png) no-repeat;
+            width: 100%;
+            height: 100%;
+            }  
+            
+     #pselector .pleft{
+        float:left;
+        width:217px;
+        background: #fff url(/img/default/selector/pleft_bck.png) no-repeat bottom left;
+        height: 525px;
+        padding-top: 15px;                 
+     }
+     
+     #pselector .shadow_bottom{
+        background: #fff url(/img/default/selector/shadow_bottom.png) no-repeat top left;
+        height:14px;
+     }     
+     
+     #pselector .pleft h2{      
+      margin-bottom: 15px; 
+      margin-left: 67px;       
+      
+      font: 1.2em Arial;      
+      font-weight: bold;
+      color: #808080;                  
+     }     
+     
+     #pselector .pleft ul{      
+      list-style-type: none;
+      
+      font: 0.7em Arial;      
+      color: #666666; 
+      background-color: transparent;      
+     }       
+     
+     #pselector .pleft ul li{
+      margin-bottom: 20px;
+      margin-left: 10px;
+      line-height: 1.5em;
+      padding-left: 60px;
+      padding-top: 6px;
+      width: 130px;            
+     }         
+     
+     #pselector .pleft ul li.one{
+        background: transparent url(/img/default/selector/one.png) no-repeat top left;        
+     }         
+     
+     #pselector .pleft ul li.two{
+        background: transparent url(/img/default/selector/two.png) no-repeat top left;
+     }              
+     
+     #pselector .pleft ul li.three{
+        background: transparent url(/img/default/selector/three.png) no-repeat top left;
+     }                   
+     
+     #pselector .pright{
+        float:left;  
+        background: #fff url(/img/default/selector/pright_shadow.png) no-repeat top left;   
+        padding-left: 32px;
+        height: 540px;
+     }
+     
+/* --- Downloads v2 --- */  
+
+#download_v2{
+  width:100%;
+}
+
+#download_v2 h1{
+  padding-top:13px;
+  margin-bottom:13px;
+  margin-left: 12px;
+}
+
+#download_v2 h1.mainHeading {
+        position: relative;
+        width: 203px;
+        height: 51px;
+        overflow: hidden;
+        font-size: 20px;
+        line-height: 1em;
+        }
+
+#download_v2 h1.mainHeading span {
+        position: absolute;
+        background: #fff url(/img/default/download/downloads_title.png) no-repeat;
+        width: 100%;
+        height: 100%;
+        }  
+
+#download_v2 .download_left{
+   width:300px;
+   float:left;     
+   background: #FFFAE6 url(/img/default/download/download_left_shadow.png) repeat-y top right;
+   min-height: 785px;
+}
+
+#download_v2 .searchbox{
+   width:100%;
+   background: transparent url(/img/default/download/search_bar.png) no-repeat top left;
+   margin: 0;
+   padding: 0;
+   height: 41px;
+}
+
+#download_v2 .searchbox form{
+  margin-left:18px;    
+}                  
+
+#download_v2 .keywords{
+  float:left;   
+  width: 210px;
+  margin-left:8px;       
+}    
+
+#download_v2 .keywords input{
+  border:0;    
+  width:100%;
+  margin-top:15px;
+  font: 0.75em Arial;
+  color: #808080;
+  background-color: transparent;
+}   
+
+#download_v2 .submit{
+  float:left;
+  margin-top:13px;
+  margin-left:2px;
+}
+
+#ptree{
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  list-style-type: none;
+  font: 0.9em Arial;
+  font-weight: bold;
+  color: #666666;    
+}
+
+#ptree li{
+  margin-top: 8px; 
+  padding-left:15px;
+  cursor: pointer;
+  width:225px;  
+  background: transparent url(/img/default/download/arrow_closed.png) no-repeat 2px 3px;
+}
+
+#ptree a{
+  color: #000;    
+}
+
+#ptree a:hover{
+  text-decoration: none;    
+}
+
+
+#ptree .p_opened, #ptree .c_opened{
+   background: transparent url(/img/default/download/arrow_opened.png) no-repeat 2px 3px;
+}
+
+#ptree .first{
+  margin:0;
+  margin-top: 5px;
+  
+  list-style-type: none;
+  font: 0.8em Arial;
+  font-weight: bold;  
+}
+
+#ptree .first li{
+  margin-top: 8px;   
+  /*padding-left:15px;*/  
+}
+
+#ptree .first li a{
+  color: #000;  
+}
+
+#ptree .second{  
+  list-style-type: none;
+  font-weight: normal; 
+}
+
+#ptree .second li{
+  margin-top: 8px;
+  padding-left: 5px;
+  background: none;
+}
+
+#ptree .second li a{
+  color: #808080;
+}
+
+#ptree .second li a:hover{
+  text-decoration: underline;
+}
+
+#ptree .second .selected{
+  background: transparent url(/img/default/download/selected_arrow.png) no-repeat left 3px;  
+  padding-left: 10px;
+}
+
+#download_v2 .download_right{
+   width:700px;
+   float:left;    
+   background: transparent url(/img/default/download/download_right_top.png) repeat-x top left;
+}
+
+#download_v2 .loading{
+   margin-top:150px;
+   margin-left:300px;
+}
+
+#download_v2 .breadcrumbs{
+   margin-top:20px;   
+   margin-bottom:10px;
+}
+
+#download_v2 .breadcrumbs ul{
+   list-style-type: none;
+   font: 0.7em Arial;
+   color: #666666;
+}
+
+#download_v2 .breadcrumbs a{
+   list-style-type: none;
+   font: 0.7em Arial;
+   background: transparent url(/img/default/download/back_arrow.png) no-repeat left 3px;
+   padding-left: 15px;
+}
+
+#download_v2 .breadcrumbs ul li{
+   display: inline;
+   background: transparent url(/img/default/download/breadcrumb_arrow.png) no-repeat left 2px;
+   padding-left: 12px;
+}
+
+#download_v2 .breadcrumbs ul li.first{
+   background: none;
+   padding-left: 0;
+}
+
+#download_v2 .download_desc h4{
+    width: 672px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    
+    border-bottom: 2px solid #E8E6E5;
+    
+    font: 1.4em Arial; 
+    font-weight: bold;
+    color: #8C8280;    
+}
+
+#download_v2 .download_product_img{
+    float:left;    
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+#download_v2 .download_product_desc{
+    float:left;    
+    width:328px;
+    
+    margin-top: 23px;    
+}
+#download_v2 .download_product_desc p{
+    font: 0.75em Arial; 
+    line-height: 1.6em;
+    color: #808080;
+}
+
+#download_v2 .download_product_desc a{
+    font: 0.75em Arial; 
+    background: transparent url(/img/default/download/breadcrumb_arrow.png) no-repeat left 2px;
+    padding-left: 12px;
+}
+
+#download_v2 .download_product_status{
+   float:left;
+   width:150px;
+   margin-top: 27px;
+   margin-left: 20px;
+   margin-bottom: 10px;
+}
+
+#download_v2 .download_product_status p{
+   font: 0.7em Arial;
+   color: #808080;  
+   margin:0;
+   padding:0;        
+}        
+
+#download_v2 .stock{
+   font-weight: bold;
+}      
+
+#download_v2 .software{
+   font-weight: bold;
+   margin-left:17px; 
+}        
+
+#download_v2 .pgroup{
+   font-weight: bold;
+   margin-left:17px; 
+}            
+
+#download_v2 .free{
+   font-weight: bold;
+   margin-left:25px; 
+}      
+                 
+#download_v2 .download_product_status img{
+   vertical-align: -3px;
+   margin-left: 15px;  
+}   
+    
+#download_v2 .download_product_price{
+   float:left;
+   width:150px;
+   margin-left: 20px;
+   margin-bottom: 7px;
+}
+
+#download_v2 .download_product_price p{
+   float:left; 
+   font: 0.7em Arial;
+   color: #808080;  
+   margin:0;
+   padding:0;        
+}     
+
+#download_v2 .product_price{
+   font: 1.1em Arial;
+   font-weight: bold;
+   vertical-align: middle;
+   margin-left: 23px;
+}      
+
+#download_v2 .download_product_price p.visit{ 
+   float:right;
+   width:82px;
+   font-weight: bold;
+   margin-right: 14px;
+}        
+
+    
+
+
+#download_v2 .download_product_buy{
+   float:left;
+   width:150px;
+   padding-left: 20px;
+}
+
+#download_v2 .download_product_buy p{
+   width:30px; 
+   margin:0;
+   padding:0;       
+   
+   margin-bottom: 5px;
+   
+   font: 0.7em Arial;
+   color: #808080;         
+}     
+
+#download_v2 .download_product_buy input{
+   float:left;
+   width:28px;
+   text-align: right;
+   font: 0.75em Arial;
+   margin:0;
+   padding:0;   
+}
+
+#download_v2 .download_product_buy img{
+   float:right;
+   margin-right: 20px;
+   margin-top: 5px;
+}
+
+#download_v2 .software{
+   margin:0;
+   padding:0;      
+}
+
+#download_v2 .software h5{
+   background: transparent url(/img/default/download/download_title_bck.png) no-repeat left 3px;
+   margin:0;
+   padding:0;
+   
+   padding-left: 33px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   
+   font: 1.0em Arial;
+   font-weight: bold;
+   color: #8C8280;
+}
+
+#download_v2 .software ul{
+    list-style-type:none;
+    font: 0.75em Arial;     
+    padding-top:5px;    
+}
+
+#download_v2 .software ul li{    
+    float:left;   
+    width:200px;  
+    margin-left:15px;       
+}
+
+#download_v2 .software ul li a{
+    display:block;
+    height: 40px;
+    padding-top: 4px;
+    
+    background: transparent url(/img/default/download/icon_zip.png) no-repeat left top;
+    padding-left:50px;   
+    line-height: 1.4em;         
+}
+
+#download_v2 .software ul li a.libstock{
+    background: transparent url(/img/default/download/icon_libstock.png) no-repeat left top;
+}
+
+#download_v2 .software ul li a.external{
+    background: transparent url(/img/default/download/icon_external.png) no-repeat left top;
+}
+
+#download_v2 .documentation{
+   margin:0;
+   padding:0;      
+}
+
+#download_v2 .documentation h5{
+   background: transparent url(/img/default/download/download_title_bck.png) no-repeat left 3px;
+   margin:0;
+   padding:0;
+   
+   padding-left: 33px;
+   margin-top: 40px;
+   margin-bottom: 35px;
+   
+   font: 1.0em Arial;
+   font-weight: bold;
+   color: #8C8280;
+}
+
+#download_v2 .doc_nav{   
+  margin:0;
+  padding:0;
+  width:100%;
+  background: #fff url(/img/default/download/shadow_nav.png) repeat-x left bottom;
+}        
+
+#download_v2 .doc_nav ul{   
+    list-style-type:none;
+    background-color: transparent;
+}
+
+#download_v2 .doc_nav ul li{ 
+    float:left;
+}
+
+#download_v2 .doc_nav ul li a{ 
+    display:block;   
+    color:#808080;
+    width:120px;
+    height:24px;
+    
+    background: transparent url(/img/default/download/btn_nav.png) no-repeat top left;         
+    
+    font: 0.8em Arial;    
+    text-align:center;        
+    padding-top: 8px;
+    margin-left: 8px;   
+    
+    cursor: pointer; 
+}
+
+#download_v2 .doc_nav .here_doc { 
+    background: transparent url(/img/default/download/btn_selected.png) no-repeat top left;         
+}
+
+#download_v2 .doc_nav .here_doc a{ 
+    font-weight:bold;    
+}
+
+#download_v2 .doc_nav .here_doc a:hover{ 
+    text-decoration:none;    
+}
+
+#download_doc div.hide_doc{
+  display: none;  
+} 
+
+#download_doc .doclist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;   
+    font: 0.75em Arial;     
+    margin-top: 10px;      
+}
+
+#download_doc .doclist li {            
+    margin:0;     
+    float:left;    
+    width:220px;                     
+}
+
+#download_doc .doclist li a {            
+    display: block;                
+    padding-left: 5px;        
+    padding-right: 15px;        
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: blue;
+    text-decoration: none;                         
+    width: 100%; 
+    height: auto;         
+    min-height: 46px;        
+}
+
+#download_doc .doclist li a img{   
+    float:left;             
+    margin: 0;
+    margin-right: 5px;          
+    padding: 0; 
+}    
+
+                          
+
+html>body #download_doc .doclist li a {
+    width: auto;
+}
+
+#download_doc .doclist li a:hover {  
+    text-decoration: underline;
+}
+
+#download_search{
+    width:100%;
+    margin: 0;
+    padding:0;
+}
+
+#download_search h2{
+  margin-top:24px;  
+  margin-left:4px;
+  float:left;
+}
+
+#download_search h2.searchHeading {
+        position: relative;
+        width: 190px;
+        height: 30px;
+        overflow: hidden;
+        font-size: 20px;
+        line-height: 1em;
+        }
+
+#download_search h2.searchHeading span {
+        position: absolute;
+        background: #fff url(/img/default/download/search_title.png) no-repeat;
+        width: 100%;
+        height: 100%;
+        }  
+
+#download_search .paging{
+  float:right;
+  background-color: transparent;
+  margin-top:30px;
+  margin-right:34px;
+}
+
+#download_search .bottom{
+  margin-top:15px;
+}
+        
+#download_search .paging p{
+  margin:0;
+  padding:0;
+    
+  text-align: center;
+  font: 1.0em Arial;
+  color: #808080;            
+}     
+
+#download_search .paging p a{
+  margin:0;
+  padding:0;
+  
+  font: 1.0em Arial;
+  color: #808080;            
+}        
+
+#download_search .results{
+  padding-top:40px;
+}
+
+#download_search .result_box{
+  width:627px; 
+  margin-left:25px;
+  margin-bottom:14px;
+  border-bottom: 1px solid #E6E6E6;  
+}
+
+#download_search .result_box img{
+  float:left;
+  margin-right: 15px;
+}
+
+#download_search .result_box h3{
+  float:left;
+  width: 447px;
+  margin-top:8px;
+  font: 0.8em Arial;
+  font-weight: bold;
+  color: #666666;    
+}
+
+#download_search .result_box h3 a{
+  color: #666666;    
+}
+
+#download_search .result_box p{
+  float:left;
+  margin-top:10px;
+  width: 447px;
+  font: 0.7em Arial;
+  color: #666666;      
+}
+
+#download_search .nosearch{
+  margin-left: 8px;                     
+  padding-top: 25px;                     
+}    
+
+#download_search .nosearch h2{
+  float: none;
+  font: 1.0em Arial;      
+  color: #666666;                   
+  margin-bottom: 15px;             
+}              
+
+#download_search .nosearch p{
+  font: 1.0em Arial;      
+  color: #666666;                   
+}  
+
+#download_search .nosearch p b{     
+  color: #ED1C24;                   
+  font-style: italic;
+}   
+
+#download_search .nosearch ul{
+  list-style-type: none;
+  font: 1.0em Arial;      
+  color: #666666;                   
+}                 
+
+#download_search .nosearch ul li{
+  margin-left: 15px;             
+  margin-bottom: 15px;             
+}
+
+#download_doc .doclist li.clear {            
+  clear: both;
+}
+
+/* --- Make Projects --- */
+
+#make_projects{
+  width: 100%;
+  padding-top:10px;
+  background: #fff url(/img/make-projects/grid_sprite.png) repeat-x top left; 
+  
+  padding-bottom: 20px;
+}
+
+#make_projects .main h1{
+  margin-left:28px;  
+  font: 2.3em Arial; 
+  color:#2A51AE;   
+  margin-bottom:18px; 
+}       
+
+#make_projects .main p{
+  font: 0.75em Arial; 
+  line-height: 1.6em;  
+  margin-left:28px;
+  margin-right:28px;
+}
+
+#make_projects .main p strong{
+  color:#EF820C;
+} 
+
+#make_projects .paging{
+  background-color: transparent;
+  margin-top:30px;
+}
+       
+#make_projects .paging p{
+  margin:0;
+  padding:0;
+    
+  text-align: center;
+  font: 1.0em Arial;
+  color: #808080;            
+}     
+
+#make_projects .paging p a{
+  margin:0;
+  padding:0;
+  
+  font: 1.0em Arial;
+  color: #808080;            
+}   
+
+#list_projects{
+  border-top:1px solid #A8B3AC;
+  margin-top:15px;
+}
+
+#list_projects .list_project_left{
+  float:left;
+  width:86px;
+  margin-left:28px;  
+}
+
+#list_projects .list_project_left p{
+  float:left;
+  width:77px;
+  
+  margin:0;
+  padding:0;
+  margin-top:14px;
+    
+  color:#EF820C;
+  font: 1.4em Arial;  
+}               
+
+#list_projects .list_project_left p.number{
+  font: 4.0em Arial;  
+  margin-top:0;
+  line-height: 1em;
+}
+
+#list_projects .list_project_left p.year{
+  font: 1.7em Arial;  
+  margin-top:0; 
+}
+
+#list_projects .list_project_right{
+  float:right;
+  width:831px;
+  
+  border-bottom: 1px solid #A8B3AC;
+}
+
+#list_projects .list_project_desc{
+  float:left; 
+  width:390px; 
+}
+
+#list_projects .list_project_desc h2{
+ font: 1.5em Arial;
+ margin:0;
+ margin-top:16px;
+ margin-bottom:16px;   
+}
+
+#list_projects .list_project_desc h2 a{
+  color: #2A51AE;
+}
+
+#list_projects .list_project_desc p{ 
+  font: 0.75em Arial; 
+  line-height: 1.6em;    
+}
+
+#list_projects .list_project_desc p.examples{
+  display:block;
+  height: 26px;
+  background: transparent url(/img/make-projects/example_icon.png) no-repeat top left;
+  
+  margin-top:16px;
+  padding-left:50px;
+  padding-top:3px;
+  
+  font-weight: bold;
+  color:#EF820C;                 
+}
+
+#list_projects .list_project_thumb{
+ float:right;
+ margin-top: 5px;
+}

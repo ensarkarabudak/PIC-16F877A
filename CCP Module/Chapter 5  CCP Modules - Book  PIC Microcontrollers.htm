@@ -1,0 +1,1417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0060)http://www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 5: CCP Modules - Book: PIC Microcontrollers</title>
+
+<meta name="keywords" content="chapter, 5, ccp, modules, book, pic, microcontrollers">
+<meta name="description" content="Abbreviation CCP stands for Capture/Compare/PWM. CCP module is a peripheral which allows the user to time and control different events.">  
+<link rel="shortcut icon" href="http://www.mikroe.com/img/favicon.ico" type="image/x-icon">   
+<link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/20121016_navigation.css"><link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/20121016_main.css"><link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/20120507_main_v2.css">      
+<link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/20120507_navigation.css"><link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/20120620_buttons.css"> 
+<link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/stylesheet.css"> <!-- Font CSS -->
+<link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.lightbox-0.5.css"> 
+<link rel="stylesheet" type="text/css" href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/lionbars.css">
+<!--[if lte IE 6]>   
+   <link rel="stylesheet" type="text/css" href="/css/ie-6lte-hacks.css" /><![endif]-->  
+<!--[if lt IE 6]>
+   <link rel="stylesheet" type="text/css" href="/css/ie-5-hacks.css" />  
+<![endif]-->
+<script type="text/javascript" async="" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/ga.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery-1.4.2.min.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.lionbars.0.3.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.tools.min.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.lightbox-0.5.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.accordion.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.cookie.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.treeview.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.treeview.edit.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.treeview.async.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.quicksearch.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.hoverIntent.minified.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.navigation.js"></script><script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/jquery.doc_ready.js"></script><script type="text/javascript">
+    function initTrees() {
+            // second example
+            $("#ptree").treeview({
+                    persist: "location",
+                    collapsed: true    
+                    ,unique: true
+            });	
+    }   
+
+$(document).ready(function() {	
+    if(typeof initTrees == 'function') {
+       initTrees();
+    }  
+});    
+</script>
+<!--google analytics-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2667377-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
+</head>
+<body>     
+  <!-- Header -->
+  <div id="header_wrapper">
+    <div id="header">
+        <div class="logo">
+          <a href="http://www.mikroe.com/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/logo_small.png" alt="MikroElektronika"></a>   
+        </div>
+        <div id="menu">
+    <div class="header_box">        
+        <ul id="topnav">
+            <li class="menu">
+                <a class="main_nav first_nav hover_intent" href="http://www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/#" onclick="return false;">Products</a>
+                <div class="links products" style="opacity: 0; ">
+                    <div class="column_holder">
+                        <div class="nav_column">
+                            <ul class="indent_left">
+                                <li class="head_link"><a href="http://www.mikroe.com/compilers/">Compilers</a></li>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/mikroc/">mikroC</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/pic/">for PIC</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/dspic/">for dsPIC/PIC24</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/pic32/">for PIC32</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/avr/">for AVR</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/8051/">for 8051</a></li>
+                                <li><a href="http://www.mikroe.com/mikroc/arm/">for ARM</a></li>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/mikrobasic/">mikroBasic</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/pic/">for PIC</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/dspic/">for dsPIC/PIC24</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/pic32/">for PIC32</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/avr/">for AVR</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/8051/">for 8051</a></li>
+                                <li><a href="http://www.mikroe.com/mikrobasic/arm/">for ARM</a></li>            
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/mikropascal/">mikroPascal</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/pic/">for PIC</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/dspic/">for dsPIC/PIC24</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/pic32/">for PIC32</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/avr/">for AVR</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/8051/">for 8051</a></li>
+                                <li><a href="http://www.mikroe.com/mikropascal/arm/">for ARM</a></li>
+                            </ul>   							
+                        </div>
+                        <div class="nav_column">
+                            <ul>
+                                <li class="head_link"><a href="http://www.mikroe.com/development-boards/">Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/pic/development-boards/">PIC Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/dspic/development-boards/">dsPIC Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/pic32/development-boards/">PIC32 Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/avr/development-boards/">AVR Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/8051/development-boards/">8051 Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/arm/development-boards/">ARM Development Boards</a></li>
+                                <li><a href="http://www.mikroe.com/store/components/">Components</a></li>                                
+                                <li><a href="http://www.mikroe.com/categories/view/60/universal-development-tools/">Universal Development Tools</a></li>
+                                <li><a href="http://www.mikroe.com/analog/">Analog Development Boards</a></li>
+                            </ul>
+                            <ul>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/add-on-boards/">Add-On Boards</a></li>
+                                <li><a href="http://www.mikroe.com/click/">Click Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/communication/">Communication Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/storage/">Storage Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/rtc/">Time Measuring Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/display/">Display Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/measurement/">Measurement Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/audio-voice/">Audio &amp; Voice Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/power-supply/">Power Supply Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/various/">Various Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/gsm-gprs/">GSM / GPRS Boards</a></li>
+                                <li><a href="http://www.mikroe.com/add-on-boards/gps/">GPS Boards</a></li>  
+                                <li><a href="http://www.mikroe.com/store/components/socket-adapters/">Socket Adapters</a></li>
+                            </ul>            					  
+                        </div>
+                        <div class="nav_column last_column">
+                                <ul>
+                                    <li class="head_link"><a href="http://www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/#" onclick="return false;">Programmers / debuggers</a></li>
+                                    <li><a href="http://www.mikroe.com/mikroprog/pic-dspic-pic32/">mikroProg for PIC, dsPIC, PIC32</a></li>
+                                    <li><a href="http://www.mikroe.com/mikroprog/stellaris/">mikroProg for Stellaris</a></li>
+                                    <li><a href="http://www.mikroe.com/mikroprog/stm32/">mikroProg for STM32</a></li>
+                                    <li><a href="http://www.mikroe.com/8051prog2/">8051 prog2</a></li>
+                                    <li><a href="http://www.mikroe.com/avrprog2/">AVRprog2</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="sub_head_link"><a href="http://www.mikroe.com/additional-software/">Additional Software</a></li>
+                                    <li><a href="http://www.mikroe.com/visualtft/">Visual TFT</a></li>
+                                    <li><a href="http://www.mikroe.com/visualglcd/">Visual GLCD</a></li>
+                                    <li><a href="http://www.mikroe.com/package-manager/">Package Manager</a></li>
+                                    <li><a href="http://www.mikroe.com/glcd-font-creator/">GLCD Font Creator</a></li>
+                                </ul> 					  
+                                <ul>
+                                    <li class="sub_head_link"><a href="http://www.mikroe.com/categories/view/4/publications/">Publications</a></li>
+                                    <li><a href="http://www.mikroe.com/pic/books/">PIC Books</a></li>
+                                    <li><a href="http://www.mikroe.com/dspic/books/">dsPIC Books</a></li>
+                                    <li><a href="http://www.mikroe.com/8051/books/">8051 Books</a></li>
+                                    <li><a href="http://www.mikroe.com/categories/view/31/various-electronic-books/">Various Electronic Books</a></li>
+                                    <li><a href="http://www.mikroe.com/categories/view/32/articles/">Articles</a></li>
+                                    <li><a href="http://www.mikroe.com/categories/view/50/other-authors-books/">Other Authors Books</a></li>
+                                </ul>        
+                        </div>	
+                        <div class="separator"></div>
+                        <div class="column_footer">
+                            <ul>
+                                <li><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/letsmake_logo.png" alt="Let’s Make..."><a href="http://www.mikroe.com/make_projects/">Let’s Make...</a></li>              
+                                <li><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/devtoolsel_logo.png" alt="Development Tools Selector"><a href="http://www.mikroe.com/products/selector/">Dev. Tool Selector</a></li>
+                                <li><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/libstock_logo.png" alt="Libstock"><a href="http://www.libstock.com/">Libstock</a></li>
+                                <li><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_mikrobus_white.png" alt="mikroBUS"><a href="http://www.mikroe.com/mikrobus/">mikroBUS</a></li>
+                            </ul>									  				  
+                        </div>
+                        </div>
+                        <div class="nav_column brand_column">
+                            <ul>
+                                <li class="head_link"><a href="http://www.mikroe.com/mikromedia/">mikromedia</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/pic18fj/">for PIC18FJ</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/pic24ep/">for PIC24EP</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/dspic33ep/">for dsPIC33EP</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/pic32/">for PIC32</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/xmega/">for XMEGA</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/atmega/">for ATMEGA</a></li>
+                                <!--<li><a href="/mikromedia/arm/">for ARM</a></li>-->
+                                <li><a href="http://www.mikroe.com/mikromedia/stellaris-m3/">for Stellaris M3</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/stm32-m3/">for STM32 M3</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/stm32-m4/">for STM32 M4</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/pic24/">for PIC24</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/dspic33/">for dsPIC33</a></li>                                
+				<li><a href="http://www.mikroe.com/mikromedia/workstation-pic/">Workstation v7</a></li>
+                                <li><a href="http://www.mikroe.com/mikromedia/shields/">mikromedia shields</a></li>
+                            </ul>
+                            <ul>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/mikroprog/">mikroProg</a></li>
+                                <li><a href="http://www.mikroe.com/mikroprog/pic-dspic-pic32/">for PIC</a></li>
+                                <li><a href="http://www.mikroe.com/mikroprog/stellaris/">for Stellaris</a></li>
+                                <li><a href="http://www.mikroe.com/mikroprog/stm32/">for STM32</a></li>
+                                <!--<li><a href="#">for AVR</a></li>-->
+                            </ul>					         
+                            <ul>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/ready/">Ready</a></li>
+                                <li><a href="http://www.mikroe.com/ready/pic/">for PIC (DIP 40)</a></li>
+                                <li><a href="http://www.mikroe.com/ready/pic-dip28/">for PIC (DIP 28)</a></li>
+                                <li><a href="http://www.mikroe.com/ready/avr/">for AVR</a></li>
+                                <li><a href="http://www.mikroe.com/ready/xmega/">for XMEGA</a></li>
+                            </ul>		         					  
+                            <ul>
+                                <li class="sub_head_link"><a href="http://www.mikroe.com/mini/">MINI</a></li>
+                                <li><a href="http://www.mikroe.com/mini/pic32/">MINI-32</a></li>
+                                <li><a href="http://www.mikroe.com/mini/at/">MINI-AT</a></li>
+                            </ul>
+                        </div>							
+                        <div class="separator"></div>
+                </div>
+            </li>
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <li class="menu" id="all_solutions">
+               
+
+    
+<div class="navigator_solution selected_navigation">
+    <a class="center main_nav hover_intent" href="http://www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/#" onclick="return false;">Solutions</a>
+    <div class="links solutions rounded" style="width: 120px; opacity: 0; ">        
+        <a href="http://www.mikroe.com/pages/selector/pic/" class="pic solution" id="link-996164227">PIC<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-996164227").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('pic');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/pic\/"});
+return false;});
+//]]>
+</script>        <a href="http://www.mikroe.com/pages/selector/dspic/" class="dspic solution" id="link-2145223319">dsPIC<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-2145223319").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('dspic');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/dspic\/"});
+return false;});
+//]]>
+</script>        <a href="http://www.mikroe.com/pages/selector/pic32/" class="pic32 solution" id="link-164600509">PIC32<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-164600509").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('pic32');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/pic32\/"});
+return false;});
+//]]>
+</script>                            
+        <a href="http://www.mikroe.com/pages/selector/avr/" class="avr solution" id="link-1624823714">AVR<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-1624823714").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('avr');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/avr\/"});
+return false;});
+//]]>
+</script>        <a href="http://www.mikroe.com/pages/selector/arm/" class="arm solution" id="link-2101793617">ARM<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-2101793617").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('arm');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/arm\/"});
+return false;});
+//]]>
+</script>		
+        <a href="http://www.mikroe.com/pages/selector/eightyfifthyone/" class="eightyfifthyone last_solution solution" id="link-874769677">8051<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-874769677").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('eightyfifthyone');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/eightyfifthyone\/"});
+return false;});
+//]]>
+</script>        <div class="separator"></div>           
+    </div>        				
+</div>
+            </li>
+            
+                                                         
+                <li class="drop_menu hide_content" id="select_solution">
+                            <a href="http://www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/#" id="dropdown" class="full_opacity " onclick="return false;">
+                    <img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/arrow_drop_down.png" alt="Drop Down" class="drop_down_arrow">                    <img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/arrow_drop_up.png" alt="Drop Up" class="drop_up_arrow hide_content">                </a>
+                <div class="links solutions last_solution" style="width: 132px; left: -132px; top: 40px; opacity: 0; ">                    
+                    <a href="http://www.mikroe.com/pages/selector/pic/" class="pic_menu solution" id="link-661103312">PIC<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-661103312").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('pic');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/pic\/"});
+return false;});
+//]]>
+</script>                    <a href="http://www.mikroe.com/pages/selector/dspic/" class="dspic_menu solution" id="link-781068447">dsPIC<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-781068447").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('dspic');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/dspic\/"});
+return false;});
+//]]>
+</script>                    <a href="http://www.mikroe.com/pages/selector/pic32/" class="pic32_menu solution" id="link-1570379072">PIC32<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-1570379072").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('pic32');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/pic32\/"});
+return false;});
+//]]>
+</script>                            
+                    <a href="http://www.mikroe.com/pages/selector/avr/" class="avr_menu solution" id="link-505408820">AVR<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-505408820").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('avr');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/avr\/"});
+return false;});
+//]]>
+</script>                    <a href="http://www.mikroe.com/pages/selector/arm/" class="arm_menu solution" id="link-1818803078">ARM<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-1818803078").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('arm');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/arm\/"});
+return false;});
+//]]>
+</script>                     
+                    <a href="http://www.mikroe.com/pages/selector/eightyfifthyone/" class="eightyfifthyone_menu solution" id="link-1995608833">8051<sup>®</sup> solution</a><script type="text/javascript">
+//<![CDATA[
+$("#link-1995608833").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('eightyfifthyone');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/eightyfifthyone\/"});
+return false;});
+//]]>
+</script>                    <a href="http://www.mikroe.com/pages/selector/turn_off/" class="turn_off solution last_solution" id="link-1398909231">Turn off navigator</a><script type="text/javascript">
+//<![CDATA[
+$("#link-1398909231").bind("click", function (event) {$.ajax({complete:function (XMLHttpRequest, textStatus) {change_mcu('turn_off');}, dataType:"html", success:function (data, textStatus) {$("#all_solutions").html(data);}, url:"\/pages\/selector\/turn_off\/"});
+return false;});
+//]]>
+</script>                   
+                    <div class="separator"></div>
+                </div>  				
+            </li>                       
+            
+            <!--<li class="divider"><img src="/img/designs/navigation/separator.png" alt="Divider" /></li>
+            <li class="menu">
+                <a class="main_nav hover_intent" href="/kits/">Kits</a>
+                <div class="links" style="width:195px; padding-top:15px; padding-bottom:15px;">
+                    <ul class="standard">
+                        <li><a href="/categories/view/3/special-offers/">PIC Kits</a></li>
+                        <li><a href="/categories/view/123/dspic-offers/">dsPIC Kits</a></li>
+                        <li><a href="/categories/view/93/pic32-offers/">PIC32 Kits</a></li>
+                        <li><a href="/categories/view/27/avr-offers/">AVR Kits</a></li>
+                        <li><a href="/categories/view/28/8051-offers/">8051 Kits</a></li>  
+                        <li><a href="/categories/view/106/arm-offers/">ARM Kits</a></li>
+			<li><a href="/categories/view/119/mikromedia-offers/">mikromedia Kits</a></li>
+                    </ul>
+                </div> 						
+            </li>-->
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <li class="menu"><a class="main_nav" href="http://www.mikroe.com/store/">Store</a></li>
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <li class="menu"><a class="main_nav" href="http://www.mikroe.com/distributors/">Distributors</a></li>
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <li class="menu"><a class="main_nav" href="http://www.mikroe.com/visitor_contacts/">Contact</a></li>
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <li class="menu"><a class="main_nav" href="http://www.mikroe.com/about/">About Us</a></li>
+            <li class="divider"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/separator.png" alt="Divider"></li>
+            <div class="separator"></div>
+        </ul>	
+                <!-- Search Box -->         
+        <div id="search_box">
+            <form action="http://www.mikroe.com/searches/" id="SearchIndexForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>                <div class="keywords">                      
+                    <input name="data[Search][keywords]" type="text" value="Enter keywords" onfocus="if(!this._haschanged){this.value=&#39;&#39;}; this._haschanged=true;" id="SearchKeywords">                </div>
+
+                <div class="submit">
+                    <input class="submit_button" type="submit" value="Search">                </div>                  
+            </form>            <div class="separator"></div>
+        </div>
+        <!-- /Search Box --> 			
+                </div>			        
+</div>        <div class="separator"></div>
+    </div>
+  </div>  
+  <!-- /Header -->   
+  
+           
+    <script type="text/javascript">// <![CDATA[
+    var cart_hover = false;
+    var mini_cart_loaded = false;
+    var mouse_is_inside = false;    
+    
+    function checkMiniCart(){         
+        if(mini_cart_loaded){                
+            if(!cart_hover && !mouse_is_inside){                    
+                $(".mini_cart_style").fadeOut("slow", function () {
+                    mini_cart_loaded = false;
+                });     
+            }               
+        }        
+    }     
+    
+    $('.mini_menu').ready(function() {	          
+        $('.cart_count').hover(function(){ 
+            if(!cart_hover && !mini_cart_loaded){
+                $('.cart_count').click();
+            }
+            cart_hover = true;
+        }, function(){
+            if(mini_cart_loaded && cart_hover){
+                setTimeout('checkMiniCart()', 500);
+            }               
+            cart_hover = false;           
+        });                            
+    });	
+// ]]></script>
+                        
+                                
+    
+    <!-- Sub Header -->
+    <div id="subheader">
+                <div class="mini_menu">
+            <p>                    <a href="http://www.mikroe.com/users/login/">Login</a> |
+                                  <a href="http://www.mikroe.com/carts/mini/" class="cart_count" id="link-418458435">Cart (0)</a><script type="text/javascript">
+//<![CDATA[
+$("#link-418458435").bind("click", function (event) {$.ajax({beforeSend:function (XMLHttpRequest) {$(".cart_icon").addClass("cart_hide"); $(".cart_loader").removeClass("cart_hide");}, complete:function (XMLHttpRequest, textStatus) {$(".cart_icon").removeClass("cart_hide"); $(".cart_loader").addClass("cart_hide");}, dataType:"html", success:function (data, textStatus) {$("#mini_cart").html(data);}, url:"\/carts\/mini\/"});
+return false;});
+//]]>
+</script></p>
+                                                     
+                <img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/mini_cart.png" alt="Mini Cart" class="cart_icon">                <img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/cart-loader.gif" alt="Cart Loading" class="cart_loader cart_hide">        </div>                    
+        <div class="separator"></div>
+        <div id="mini_cart">
+        </div>
+    </div>   
+    <!-- /Sub Header -->
+            
+  <div class="sep5px"></div>
+  
+  <div id="wrapper"> 
+    <div class="sep10px"></div>
+	
+    <div id="full">         
+                   
+                
+	    		                              
+    <div id="content_left">  
+        <h1>Book: PIC Microcontrollers</h1>
+        <div id="chapters">
+
+        <ul>
+            <li><a href="http://www.mikroe.com/products/view/11/book-pic-microcontrollers/">TOC</a></li>
+                
+                                 <li><a href="http://www.mikroe.com/chapters/view/1/introduction-world-of-microcontrollers/">Introduction</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/2/chapter-1-pic16f887-microcontroller-device-overview/">Ch. 1</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/3/chapter-2-core-sfrs/">Ch. 2</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/4/chapter-3-i-o-ports/">Ch. 3</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/5/chapter-4-timers/">Ch 4.</a></li>
+                               
+                                                     
+                  <li><a href="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/Chapter 5  CCP Modules - Book  PIC Microcontrollers.htm" class="here">Ch. 5</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/7/chapter-6-serial-communication-modules/">Ch. 6</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/8/chapter-7-analog-modules/">Ch. 7</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/9/chapter-8-other-mcu-s-circuits/">Ch. 8</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/10/chapter-9-instruction-set/">Ch. 9</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/11/appendix-a-programming-a-microcontroller/">App. A</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/12/appendix-b-examples/">App. B</a></li>
+                               
+                                 <li><a href="http://www.mikroe.com/chapters/view/13/appendix-c-development-systems/">App. C</a></li>
+                                                               
+        </ul>
+    </div>      
+    <div class="separator"></div>
+    <h2>Chapter 5: CCP Modules</h2>
+<p>The abbreviation CCP stands for <i>Capture/Compare/PWM</i>.</p>
+<p>The CCP module is a peripheral which allows the user to time and control different events.</p>
+<p><b>Capture Mode</b>, allows timing for the duration of an event. This circuit gives insight into the current state of a register which constantly changes its value. In this case, it is the timer TMR1 register.</p>
+<p><b>Compare Mode</b> compares values contained in two registers at some point. One of     them is the timer TMR1 register. This circuit also allows the user to trigger an external     event when a predetermined amount of time has expired.</p>
+<p><b>PWM</b> - <i>Pulse Width Modulation</i> can generate signals of varying frequency and duty cycle.</p>
+<p>The PIC16F887 microcontroller has two such modules - CCP1 and CCP2.</p>
+<p>Both of them are identical in normal mode, with the exception of the Enhanced PWM features available on CCP1 only. This is why this chapter describes the CCP1 module in detail. Concerning CCP2, only the features distinguishing it from CCP1 will be covered.</p>
+<p><i>Complicated? All this is only a simplified explanation on their operation. Everything is much more complicated in practice because these modules can operate in many different modes. Try to analyze their operation on the basis of the tables describing bit functions. If you use  any CCP module, first select the mode you need, analyze the appropriate figure and then start changing bits of the registers or else...</i></p>
+<h3>CCP1 Module</h3>
+<p>A central part of this circuit is a 16-bit register CCPR1, which consists of the CCPR1L and CCPR1H registers. It is used for capturing or comparing with binary number stored in the timer register TMR1 (TMR1H and TMR1L).</p>
+<div class="center"><img title="CCP1 Module" alt="CCP1 Module" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-1.gif">
+<p class="center"><b class="small">Fig. 5-1 CCP1 Module</b></p>
+</div>
+<p>In Compare mode, if enabled by software, the timer TMR1 reset may occur on match. Besides, the CCP1 module can generate PWM signals of varying frequency and duty cycle.</p>
+<p>Bits of the CCP1CON register controls the CCP1 module.</p>
+<h4>CCP1 in Capture mode</h4>
+<p>In this mode, the timer register TMR1 (consisting of TMR1H and TMR1L) is copied to the CCP1 register (consisting of CCPR1H and CCPR1L) in the following situations:</p>
+<ul class="default_font flat">
+<li>Every falling edge (1 » 0) on the RC2/CCP1 pin;</li>
+<li>Every rising edge (0 » 1) on the RC2/CCP1 pin;</li>
+<li>Every 4th rising edge (0 » 1) on the RC2/CCP1 pin; and</li>
+<li>Every 16th rising edge (0 » 1) on the RC2/CCP1 pin.</li>
+</ul>
+<p>The combination of the four bits (CCP1M3 - CCP1M0) of the control register determines which of these events will trigger 16-bit data transfer. In addition, the following conditions must be met:</p>
+<ul class="default_font flat">
+<li>RC2/CCP1 pin must be configured as input; and</li>
+<li>TMR1 module must operate as timer or synchronous counter.</li>
+</ul>
+<div class="center"><img title="CCP1 in Capture mode" alt="CCP1 in Capture mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-2.gif">
+<p class="center"><b class="small">Fig. 5-2 CCP1 in Capture mode</b></p>
+</div>
+<p>The flag bit CCP1IF is set when a capture is made. If it happens and if the CCP1IE bit of the PIE register      is set, then an interrupt occurs.</p>
+<p>When the Capture mode is changed, an undesirable capture interrupts may be generated. In order to avoid that, both a bit enabling CCP1IE interrupt and flag bit CCP1IF should be cleared prior to any change occuring in the control register.</p>
+<p>Undesirable interrupt may be also generated by switching from one capture prescaler to another. To avoid this, the CCP1 module should be temporarily switched off before changing the prescaler.</p>
+<p>The following program sequence is recommended:</p>
+<pre class="code">BANKESEL CCP1CON
+CLRF     CCP1CON     ;CONTROL REGISTER IS CLEARED
+                     ;CCP1 MODULE IS OFF
+MOVLW    XX          ;NEW PRESCALER MODE IS SELECTED
+MOVWF    CCP1CON     ;NEW VALUE IS LOADED TO THE CONTROL REGISTER
+                     ;CCP1 MODULE IS SIMULTANEOUSLY SWITCHED ON</pre>
+<h4>CCP1 in Compare mode</h4>
+<p>In this mode, the value in the CCP1 register is constantly compared to the value in the timer register TMR1. When a match occurs, the output pin RC2/CCP1 logic state may be changed, which depends on the state of bits in the control register (CCP1M3 - CCP1M0). The flag-bit CCP1IF will be simultaneously set.</p>
+<div class="center"><img title="CCP1 in Compare mode" alt="CCP1 in Compare mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-3.gif">
+<p class="center"><b class="small">Fig. 5-3 CCP1 in Compare mode</b></p>
+</div>
+<p>To setup CCP1 module to operate in this mode, two conditions must be met:</p>
+<ul class="default_font flat">
+<li>Pin RC2/CCP1 must be configured as output; and</li>
+<li>Timer TMR1 must be synchronized with internal clock.</li>
+</ul>
+<h4>CCP1 in PWM mode</h4>
+<p>Signals of varying frequency and duty cycle have a wide application in automation. A typical example is a power control circuit whose simple operation is shown in figure 5-4 below. If a logic zero (0) represents switch-off and logic one (1) represents switchon, the power that the load consumes will be directly proportional to the pulse duration. This ratio is often called <i>Duty Cycle</i>.</p>
+<div class="center"><img title="CCP1 in PWM mode" alt="CCP1 in PWM mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-4.gif">
+<p class="center"><b class="small">Fig. 5-4 CCP1 in PWM mode</b></p>
+</div>
+<p>Another example, common in practice, is the usage of PWM signals in the circuit for generating signals of arbitrary waveforms, for example, sinusoidal waveform. See figure 5-5 below:</p>
+<div class="center"><img title="CCP1 in PWM mode with filtration" alt="CCP1 in PWM mode with filtration" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-5.gif">
+<p class="center"><b class="small">Fig. 5-5 CCP1 in PWM mode with filtration</b></p>
+</div>
+<p>Devices which operate in this way are often used in practice as switching regulators which control the operation of motors (speed, acceleration, deceleration etc.).</p>
+<div class="center"><img title="PWM module" alt="PWM module" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-6.gif">
+<p class="center"><b class="small">Fig. 5-6 PWM module</b></p>
+</div>
+<p>The figure above shows the block diagram of the CCP1 module setup in PWM mode. In order     to generate a pulse of arbitrary form on its output pin, it is necessary to determine only two     values- pulse frequency and duration.</p>
+<div class="center"><img title="PWM Mode" alt="PWM Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-7.gif">
+<p class="center"><b class="small">Fig.5-7 PWM Mode</b></p>
+</div>
+<h4>PWM Period</h4>
+<p>The output pulse period (T) is specified by the PR2 register of the timer TMR2. The PWM period can be calculated using the following equation:</p>
+<p>PWM Period(T) = (PR2 +1) * 4Tosc * TMR2 Prescale Value</p>
+<p>If the PWM Period (T) is known then, it is easy to determine the signal frequency F because these two values are related by equation F=1/T.</p>
+<h4>PWM Duty Cycle</h4>
+<p>The PWM duty cycle is specified by using in total of 10 bits: eight MSbs found in the CCPR1L      register and two additional LSbs found in the CCP1CON register (DC1B1 and DC1B0).      The result is 10-bit number contained in the formula:</p>
+<p>Pulse Width = (CCPR1L,DC1B1,DC1B0) * Tosc * TMR2 Prescale Value</p>
+<p>The following table shows how to generate PWM signals of varying frequency if the microcontroller uses 20 MHz quartz-crystal (Tosc=50nS).</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>Frequency [KHz]</b></th>
+<th><b>1.22</b></th>
+<th><b>4.88</b></th>
+<th><b>19.53</b></th>
+<th><b>78.12</b></th>
+<th><b>156.3</b></th>
+<th><b>208.3</b></th>
+</tr>
+<tr>
+<td>TMR2 Prescaler</td>
+<td>16</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PR2 Register</td>
+<td>FFh</td>
+<td>FFh</td>
+<td>FFh</td>
+<td>3Fh</td>
+<td>1Fh</td>
+<td>17h</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-1 PWM Duty Cycle</b></p>
+<p>At last, two notes:</p>
+<ul class="default_font flat">
+<li>Output pin will be constantly set in case the pulse width is by negligence determined to be larger than PWM period; and</li>
+<li>In this application, the timer TMR2 Postscaler cannot be used for generating longer PWM periods.</li>
+</ul>
+<h4>PWM Resolution</h4>
+<p>PWM signal is nothing more than the pulse sequence with varying duty cycle. For one specified frequency (number of pulses per second), there is a limited number of duty cycle combinations. This number is called resolution measured by bits. For example, a 10-bit resolution will result in 1024 discrete duty cycles, whereas an 8-bit resolution will result in 256 discrete duty cycles etc. In relation to this microcontroller, the resolution is specified by the PR2 register. The maximal value is obtained by writing number FFh.</p>
+<p>PWM frequencies and resolutions ( Fosc = 20MHz):</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>PWM Frequency</b></th>
+<th><b>1.22kHz</b></th>
+<th><b>4.88kHz</b></th>
+<th><b>19.53kHz</b></th>
+<th><b>78.12kHz</b></th>
+<th><b>156.3kHz</b></th>
+<th><b>208.3kHz</b></th>
+</tr>
+<tr>
+<td>Timer Prescale</td>
+<td>16</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PR2 Value</td>
+<td>FFh</td>
+<td>FFh</td>
+<td>FFh</td>
+<td>3Fh</td>
+<td>1Fh</td>
+<td>17h</td>
+</tr>
+<tr>
+<td>Maximum Resolution</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>8</td>
+<td>7</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-2 PWM Frequencies and Resolutions</b></p>
+<p>PWM frequencies and resolutions ( Fosc = 8MHz):</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>PWM Frequency</b></th>
+<th><b>1.22kHz</b></th>
+<th><b>4.90kHz</b></th>
+<th><b>19.61kHz</b></th>
+<th><b>76.92kHz</b></th>
+<th><b>153.85kHz</b></th>
+<th><b>200.0kHz</b></th>
+</tr>
+<tr>
+<td>Timer Prescale</td>
+<td>16</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>PR2 Value</td>
+<td>65h</td>
+<td>65h</td>
+<td>65h</td>
+<td>19h</td>
+<td>0Ch</td>
+<td>09h</td>
+</tr>
+<tr>
+<td>Maximum Resolution</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>6</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-3 PWM Frequencies and Resolutions</b></p>
+<h4>CCP1CON Register</h4>
+<div class="center"><img title="CCP1CON Register" alt="CCP1CON Register" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-8.gif">
+<p class="center"><b class="small">Fig. 5-8 CCP1CON Register</b></p>
+</div>
+<p><b>P1M1, P1M0</b> - PWM Output Configuration bits - In all modes, excepting PWM, the P1A pin is Capture/Compare module input. P1B, P1C and P1D pins act as input/output port D pins. In PWM mode, these bits affect the CCP1 module as shown in the table 5-4 below:</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>P1M1</b></th>
+<th><b>P1M0</b></th>
+<th><b>Mode</b></th>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>PWM with single output</b></td>
+</tr>
+<tr>
+<td>Pin P1A outputs modulated signal.<br> Pins P1B, P1C and P1D are port D input/output</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>Full Bridge - Forward configuration</b></td>
+</tr>
+<tr>
+<td>Pin P1D outputs modulated signal<br> Pin P1A is active<br> Pins P1B and P1C are inactive</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Half Bridge configuration</b></td>
+</tr>
+<tr>
+<td>Pins P1A and P1B output modulated signal<br> PinsP1C and P1D are port D input/output</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>Full Bridge - Reverse configuration</b></td>
+</tr>
+<tr>
+<td>Pin P1B outputs modulated signal<br> Pin P1C is active<br> Pins P1A and P1D are inactive</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-4 CCP1CON Register</b></p>
+<p><b>DC1B1, DC1B0</b> - PWM Duty Cycle Least Significant bits - are only used in PWM mode in which they represent two least significant bits of a 10-bit number. This number determines PWM signal’s duty cycle. The rest of bits (8 in total) are stored in the CCPR1L register.</p>
+<p><b>CCP1M3 - CCP1M0</b> - CCP1 Mode Select bits determine the mode of the CCP1 module.</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>CCP1M3</b></th>
+<th><b>CCP1M2</b></th>
+<th><b>CCP1M1</b></th>
+<th><b>CCP1M0</b></th>
+<th><b>Mode</b></th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Module is disabled (reset)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>CCP1IF bit is set on match</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every falling edge on the CCP1 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every rising edge on the CCP1 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every 4th rising edge on the CCP1 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every 16th rising edge on the CCP1 pin</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Output and CCP1IF bit are set on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Output is cleared and CCP1IF bit is set on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Interrupt request arrives and bit CCP1IF is set on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Bit CCP1IF is set and timers 1 or 2 registers are cleared</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>PWM mode</b></td>
+</tr>
+<tr>
+<td>Pins P1A and P1C are active-high<br> Pins P1B and P1D are active-high</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>PWM mode</b></td>
+</tr>
+<tr>
+<td>Pins P1A and P1C are active-high<br> Pins P1B and P1D are active-low</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>PWM mode</b></td>
+</tr>
+<tr>
+<td>Pins P1A and P1C are active-low<br> Pins P1B and P1D are active-high</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>PWM mode</b></td>
+</tr>
+<tr>
+<td>Pins P1A and P1C are active-low<br> Pins P1B and P1D are active-low</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-5 Modes of Operations</b></p>
+<h3>CCP2 Module</h3>
+<p>Excluding the different names of registers and bits, this module is a very good copy of the CCP1 module setup in normal mode (previously discussed). There is only one true difference between their modes when CCP2 operates in Compare mode.</p>
+<p>That difference refers to the timer T1 reset signal. Namely, if A/D converter is enabled at the     moment the values of the TMR1 and CCPR2 registers match, the timer T1 reset signal will automatically start A/D conversion.</p>
+<div class="center"><img title="CCP2 Module" alt="CCP2 Module" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-9.gif">
+<p class="center"><b class="small">Fig. 5-9 CCP2 Module</b></p>
+</div>
+<p>Similar to the pervious module, this circuit is under control of the bits of the control register. This time, it is the CCP2CON register.</p>
+<h4>CCP2CON Register</h4>
+<div class="center"><img title="CCP2CON Register" alt="CCP2CON Register" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-10.gif">
+<p class="center"><b class="small">Fig. 5-10 CCP2CON Register</b></p>
+</div>
+<p><b>DC2B1, DC2B0</b> - PWM Duty Cycle Least Significant bits - are only used in PWM mode representing two least significant bits of a 10-bit number. This number determines PWM signal’s duty cycle. The rest of bits (8 in total) are stored in the CCPR2L register.</p>
+<p><b>CCP2M3 - CCP2M0</b> - CCP2 Mode Select bits select CCP2 mode.</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>CCP2M3</b></th>
+<th><b>CCP2M2</b></th>
+<th><b>CCP2M1</b></th>
+<th><b>CCP2M0</b></th>
+<th><b>Mode</b></th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Module is disabled (reset)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every falling edge on the CCP2 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every raising edge on the CCP2 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every 4th rising edge on the CCP2 pin</td>
+</tr>
+<tr>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>Capture mode</b></td>
+</tr>
+<tr>
+<td>Every 16th rising edge on the CCP2 pin</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Output and CCP2IF bit are set on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Output is cleared and CCP2IF bit is set on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>Interrupt is generated, CCP2IF bit is set and CCP2 pin is unaffected on match</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td rowspan="2">0</td>
+<td rowspan="2">1</td>
+<td rowspan="2">1</td>
+<td><b>Compare mode</b></td>
+</tr>
+<tr>
+<td>CCP2IF bit is set, Timer 1 registers are cleared, A/D            conversion is started if the A/D converter is on on match</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>x</td>
+<td>x</td>
+<td><b>PWM mode</b></td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-6 CCP2CON Register</b></p>
+<h4>In short: Setup CCP1 module for PWM operation</h4>
+<p>In order to setup the CCP module for PWM operation, the following steps should be taken:</p>
+<ul class="default_font flat">
+<li>Disable the CCP1 output pin. It should be configured as input;</li>
+<li>Set the PWM period by loading the PR2 register;</li>
+<li>Configure the CCP module for the PWM mode by combining bits of the CCP1CON register;</li>
+<li>Set the PWM signal’s duty cycle by loading the CCPR1L register and using bits DC1B1 and DC1B0 of the CCP1CON register;</li>
+<li>Configure and start timer TMR2:       
+<ul class="default_font flat">
+<li>Clear the TMR2IF interrupt flag bit of the PIR1 register;</li>
+<li>Set the timer TMR2 prescale value by loading bits T2CKPS1 and T2CKPS0 of the T2CON register;</li>
+<li>Start the timer TMR2 by setting the TMR2ON bit of the T2CON register;</li>
+</ul>
+</li>
+<li>Enable PWM output pins after one PWM cycle has been finished:       
+<ul class="default_font flat">
+<li>Wait for the timer TMR2 overflow (TMR2IF bit of the PIR1register is set); and</li>
+<li>Configure the appropriate pin as output by clearing bit of the TRIS register.</li>
+</ul>
+</li>
+</ul>
+<h3>CCP1 in Enhanced Mode</h3>
+<p>The enhanced mode is available on CCP1 only. Basically, this module does not differ from the one previously described and enhancement refers to transmission of PWM signal to the output pins. Why is it so important? Because the microcontrollers are more frequently used in control systems for electric motors. These devices are not described here, but if you ever have had a chance to work on development of similar devices, you will recognize elements which, until  quite recently, have been used as external ones. Normally, all these elements are now integrated into  the microcontroller and can operate in several different modes.</p>
+<h4>Single Output PWM Mode</h4>
+<p>This mode is enabled only in the event that the P1M1 and P1M0 bits of the CCP1CON register are cleared. In this case, there is only one PWM signal which can be simultaneously available on a maximum of four different output pins. Besides, the PWM signal may appear in basic or inverted waveform. Signal distribution is determined by the bits of the PSTRCON register, while it's polarity is determined by the CCP1M1 and CCP1M0 bits of the CCP1CON register.</p>
+<p>When an inverted output is in use, the pins are low-active and pulses having the same waveform are always generated in pairs: on the P1A and P1C pins and P1B and P1D pins, respectively.</p>
+<div class="center"><img title="Single Output PWM Mode" alt="Single Output PWM Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-11.gif">
+<p class="center"><b class="small">Fig. 5-11 Single Output PWM Mode</b></p>
+</div>
+<h4>Half-Bridge Mode</h4>
+<p>In this mode, the PWM signal is output on the P1A pin, while at the same time the complementary PWM signal is output on the P1B pin. Such pulses activate MOSFET drivers in Half-Bridge mode which enable/disable current flow through device.</p>
+<div class="center"><img title="Half-Bridge Mode" alt="Half-Bridge Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-12.gif">
+<p class="center"><b class="small">Fig. 5-12 Half-Bridge Mode</b></p>
+</div>
+<p>In relation to this circuit, it is very dangerous to switch on both MOSFET drivers simultaneously. The short circuit caused in that moment will be fatal. In order to avoid that, it is necessary to provide a short delay between switching drivers on and off. This delay is marked as "td" in figure 5-13 below. The problem is solved by using the PDC0-PDC6 bits of the PWM1CON register.</p>
+<div class="center"><img title="Period Diagram" alt="Period Diagram" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-13.gif">
+<p class="center"><b class="small">Fig. 5-13 Half Bridge Mode</b></p>
+</div>
+<p>As shown in figure 5-14, the same mode can be used to activate MOSFET drivers in Full Bridge:</p>
+<div class="center"><img title="Activate MOSFET drivers" alt="Activate MOSFET drivers" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-14.gif">
+<p class="center"><b class="small">Fig. 5-14 Activate MOSFET drivers</b></p>
+</div>
+<h4>Full-Bridge Mode</h4>
+<p>In Full-Bridge mode, all four pins are used as outputs. In practice, this mode is commonly used to run motors, which provides simple and complete control of speed and rotation direction. There are two such configurations: <i>Full Bridge-Forward</i> and <i>Full Bridge-Reverse</i>.</p>
+<div class="center"><img title="Full-Bridge Mode" alt="Full-Bridge Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-15.gif">
+<p class="center"><b class="small">Fig. 5-15 Full-Bridge Mode</b></p>
+</div>
+<h4>Full Bridge - Forward Configuration</h4>
+<p>In <i>Forward</i> mode the following occurs:</p>
+<ul class="default_font flat">
+<li>Logic one (1) appears on the P1A pin (pin is high-active);</li>
+<li>Pulse sequence appears on the P1D pin; and</li>
+<li>Logic zero (0) appears on the P1B and P1C pins (pins are low-active).</li>
+</ul>
+<p>Figure below shows the state of the P1A-P1D pins during one full PWM cycle.</p>
+<div class="center"><img title="Forward Mode" alt="Forward Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-16.gif">
+<p class="center"><b class="small">Fig. 5-16 Forward Mode</b></p>
+</div>
+<h4>Full Bridge - Reverse Configuration</h4>
+<p>The same occurs in <i>Reverse</i> mode, except of the pins functions:</p>
+<ul class="default_font flat">
+<li>Logic one (1) appears on the P1C pin (pin is active-high);</li>
+<li>Pulse sequence appears on the P1B pin; and</li>
+<li>Logic zero (0) appears on the P1A and P1D pins (pins are active-low).</li>
+</ul>
+<div class="center"><img title="Reverse Mode" alt="Reverse Mode" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-17.gif">
+<p class="center"><b class="small">Fig. 5-17 Reverse Mode</b></p>
+</div>
+<h4>PWM1CON Register - STRC PWM Restart Enable bit</h4> 
+<ul class="default_font flat">
+<li>1 - Upon auto-shutdown, the PWM module is automatically reset, while the ECCPASE bit of the ECCPAS register is cleared.</li>
+<li>0 - In order to restart PWM module upon auto-shutdown, the ECCPASE bit must be cleared in software.</li>
+</ul>
+<p><b>PDC6 - PDC0</b> - PWM Delay Count bits. 7-digit binary number determines the number of instruction cycles (4*Tosc) added as time delay during the activation of PWM output pins.</p>
+<div class="center"><img title="PWM1CON Register" alt="PWM1CON Register" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-18.gif">
+<p class="center"><b class="small">Fig. 5-18 PWM1CON Register</b></p>
+</div>
+<h4>PSTRCON Register</h4>
+<p><b>STRSYNC - Steering Sync bit</b> determines the moment of PWM pulse steering:</p>
+<ul class="default_font flat">
+<li>1 - Steering occurs upon the PSTRCON has been changed, but only if a PWM waveform is completed; and</li>
+<li>0 - Steering occurs upon the PSTRCON register has been changed. The PWM  signal on output pin is immediately changed with no regard to whether the previous cycle is completed or not. This operation is useful when it is needed to immediately remove a PWM signal from the pin.</li>
+</ul>
+<p><b>STRD - Steering Enable bit D</b> determines the P1D pin function.</p>
+<ul class="default_font flat">
+<li>1 - P1D pin has the PWM waveform with polarity controlled by the CCP1M0 and CCP1M1 bits; and</li>
+<li>0 - Pin is configured as general Port D input/output.</li>
+</ul>
+<p><b>STRC Steering Enable bit C</b> determines the P1C pin function.</p>
+<ul class="default_font flat">
+<li>1 - P1C pin has the PWM waveform with polarity controlled by the CCP1M0 and CCP1M1 bits; and</li>
+<li>0 - Pin is configured as general port D input/output.</li>
+</ul>
+<p><b>STRB - Steering Enable bit B</b> determines the P1B pin function.</p>
+<ul class="default_font flat">
+<li>1 - P1B pin has the PWM waveform with polarity controlled by the CCP1M0 and CCP1M1 bits; and</li>
+<li>0 - Pin is configured as general port D input/output.</li>
+</ul>
+<p><b>STRA - Steering Enable bit A</b> determines the P1A pin function.</p>
+<ul class="default_font flat">
+<li>1 - P1D pin has the PWM waveform with polarity controlled by the CCP1M0 and CCP1M1 bits; and</li>
+<li>0 - Pin is configured as general port Ainput/output.</li>
+</ul>
+<h4>ECCPAS Register</h4>
+<div class="center"><img title="ECCPAS Register" alt="ECCPAS Register" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/fig5-19.gif">
+<p class="center"><b class="small">Fig. 5-19 ECCPAS Register</b></p>
+</div>
+<p><b>ECCPASE - ECCP Auto-Shutdown Event Status bit</b> indicates whether shut-down of CCP module has occurred (Shutdown state):</p>
+<ul class="default_font flat">
+<li>1 - CCP module is in Shutdown state; and</li>
+<li>0 - CCP module operates normally.</li>
+</ul>
+<p><b>ECCPAS2 - ECCPAS0 - ECCP Auto-Shutdown Source Select bits</b> select auto shutdown source:</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>ECCPAS2</b></th>
+<th><b>ECCPAS1</b></th>
+<th><b>ECCPAS0</b></th>
+<th><b>Shuthown state source</b></th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Shutdown state disabled</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Comparator C1 output change</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>Comparator C2 output change</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Comparator C1 or C2 output change</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Logic zero (0) on INT pin</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Logic zero (0) on INT pin or comparator C1 output change</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>Logic zero (0) on INT pin or comparator C2 output change</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Logic zero (0) on INT pin or comparator C1 or C2 output change</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-7 ECCPAS Register</b></p>
+<p><b>PSSAC1, PSSAC0 - Pins P1A, P1C Shutdown State Control bits</b> define logic state on output pins P1A and P1C when CCP module is in shutdown state.</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>PSSAC1</b></th>
+<th><b>PSSAC0</b></th>
+<th><b>Pins logic state</b></th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>X</td>
+<td>High impedance (Tri-state)</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-8 A&amp;C Logic States</b></p>
+<p><b>PSSBD1, PSSBD0 - Pins P1B, P1D Shutdown State Control bits</b> define logic state on output pins P1B and P1D when CCP module is in shutdown state.</p>
+<table class="def_table">
+<tbody>
+<tr>
+<th><b>PSSBD1</b></th>
+<th><b>PSSBD0</b></th>
+<th><b>Pins logic state</b></th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>X</td>
+<td>High impedance (Tri-state)</td>
+</tr>
+</tbody>
+</table>
+<p class="center"><b class="small">Table 5-9 B&amp;D Logic States</b></p>    <div class="separator"></div>
+    <p class="fright">
+        ← <a href="http://www.mikroe.com/chapters/view/5/chapter-4-timers/">previous chapter</a> | 
+        <a href="http://www.mikroe.com/products/view/11/book-pic-microcontrollers/">table of contents</a>        
+    | <a href="http://www.mikroe.com/chapters/view/7/chapter-6-serial-communication-modules/">next chapter</a> →
+        
+    </p>
+    <div class="separator"></div>
+</div>
+   <div id="sidebarCompiler">
+        
+         <div class="sidebar_product_holder">           
+          <div id="tools">            
+              <h2 style="background-color:#fff; color: #933;">Featured Development Tools</h2>
+              <div class="separator"></div>                     
+                             
+                                                                    
+                  <div class="sidebar_product_thumb">
+                  <h3><a href="http://www.mikroe.com/easypic/">EasyPIC v7 Development System</a></h3>
+                      <a href="http://www.mikroe.com/easypic/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/thumb_easypic_v7.png" title="EasyPIC v7 Development System" alt="EasyPIC v7 Development System"></a>              
+                  
+                      <p>Top seller PIC Development Board for 250 Microchip PIC MCUs in DIP packaging. It features USB 2.0 programmer/debugger and over 17 essential modules necessary in development. Board comes with PIC18F45K22. [<a href="http://www.mikroe.com/easypic/">more info</a>]</p>
+                  </div>
+                         
+          </div>        
+         </div>
+       
+    
+     
+    
+        
+         <div class="sidebar_product_holder">           
+          <div id="sidebarbooks">            
+              <h2 style="background-color:#fff; color: #933;">Free Online Books</h2>
+              <div class="separator"></div>                     
+                             
+                                      
+                                
+                  <div class="sidebar_product_thumb">
+                  <h3><a href="http://www.mikroe.com/products/view/285/book-pic-microcontrollers-programming-in-c/">Book: PIC Microcontrollers - Programming in C</a></h3>
+                      <a href="http://www.mikroe.com/products/view/285/book-pic-microcontrollers-programming-in-c/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/thumb_174.gif" title="Book: PIC Microcontrollers - Programming in C" alt="Book: PIC Microcontrollers - Programming in C"></a>              
+                  
+                      <p>What are microcontrollers, anyway? Electronic components built into one single chip capable of controlling a small submarine, a crane or an elevator… anything. It’s up to you to decide what you want them to do. You just have to write a program and dump it into the microcontroller. [<a href="http://www.mikroe.com/products/view/285/book-pic-microcontrollers-programming-in-c/">more info</a>]</p>
+                  </div>
+                         
+          </div>        
+         </div>
+           
+   </div>        
+    <div class="separator"></div>               
+                
+    </div>      
+  </div> 
+  
+    
+<div id="footer">
+    <!-- box -->
+    <div class="footer_box">     
+        <div class="footer_top"> 
+        <h4>MikroElektronika Embedded Solutions</h4>
+        <div class="social">
+                <p>Follow us on</p>
+                <a href="http://www.facebook.com/mikroElektronika/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_facebook.png" alt="Find us on Facebook"></a>                                  
+                <a href="http://twitter.com/mikroel/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_twitter.png" alt="Follow us on Twitter"></a>                                                      				
+                <a href="http://www.linkedin.com/company/mikroelektronika/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_linkedin.png" alt="Find us on LinkedIn"></a>                                                         
+                <a href="http://vimeo.com/mikroelektronika/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_vimeo.png" alt="Find us on Vimeo"></a>             
+                <a href="http://www.youtube.com/mikroelektronika/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_youtube.png" alt="Find us on YouTube"></a>                                           
+                <a href="http://plus.google.com/117936454090273778905/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_google-plus.png" alt="Find us on Google+"></a>                  
+                <div class="separator"></div>          
+        </div>
+        <div class="separator"></div>
+        </div> 
+        <div class="footer_content">
+            <div class="footer_column">
+                <div class="solution pic">
+                    <h5><a href="http://www.mikroe.com/pic/">PIC Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/pic/development-boards/">PIC Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/pic/compilers/">PIC Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/pic/programmers-debuggers/">PIC Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/pic/kits/">PIC Kits</a></li>
+                        <li><a href="http://www.mikroe.com/pic/books/">PIC Books</a></li>
+                    </ul>
+                </div>
+                <div class="solution avr">
+                    <h5><a href="http://www.mikroe.com/avr/">AVR Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/avr/development-boards/">AVR Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/avr/compilers/">AVR Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/avr/programmers-debuggers/">AVR Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/avr/kits/">AVR Kits</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_column">
+                <div class="solution dspic">
+                    <h5><a href="http://www.mikroe.com/dspic/">dsPIC Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/dspic/development-boards/">dsPIC Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/dspic/compilers/">dsPIC Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/dspic/programmers-debuggers/">dsPIC Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/dspic/kits/">dsPIC Kits</a></li>
+                        <li><a href="http://www.mikroe.com/dspic/books/">dsPIC Books</a></li>
+                    </ul>
+                </div>
+                <div class="solution arm">
+                    <h5><a href="http://www.mikroe.com/arm/">ARM Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/arm/development-boards/">ARM Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/arm/compilers/">ARM Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/arm/programmers-debuggers/">ARM Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/arm/kits/">ARM Kits</a></li>
+                    </ul>
+                </div>         
+            </div>  
+            <div class="footer_column">
+                <div class="solution pic32">
+                    <h5><a href="http://www.mikroe.com/pic32/">PIC32 Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/pic32/development-boards/">PIC32 Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/pic32/compilers/">PIC32 Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/pic32/programmers-debuggers/">PIC32 Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/pic32/kits/">PIC32 Kits</a></li>
+                    </ul>
+                </div>
+                <div class="solution eighty">
+                    <h5><a href="http://www.mikroe.com/8051/">8051 Solution</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/8051/development-boards/">8051 Development Boards</a></li>
+                        <li><a href="http://www.mikroe.com/8051/compilers/">8051 Compilers</a></li>
+                        <li><a href="http://www.mikroe.com/8051/programmers-debuggers/">8051 Programmers/Debuggers</a></li>
+                        <li><a href="http://www.mikroe.com/8051/books/">8051 Books</a></li>
+                        <li><a href="http://www.mikroe.com/8051/kits/">8051 Kits</a></li>
+                    </ul>
+                </div> 
+            </div>         
+            <div class="footer_column">
+                <div class="solution addon">
+                    <h5><a href="http://www.mikroe.com/add-on-boards/">Add-on boards</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/click/">Click Boards</a></li>
+                        <li><a href="http://www.mikroe.com/mikromedia/shields/">mikromedia shields</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/communication/">Communication boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/storage/">Storage boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/rtc/">Real Time Clock boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/display/">Display boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/measurement/">Measurement boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/audio-voice/">Audio &amp; Voice boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/power-supply/">Power Supply boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/gps/">GPS boards</a></li>
+                        <li><a href="http://www.mikroe.com/add-on-boards/gsm-gprs/">GSM/GPRS boards</a></li>
+                    </ul>     
+            </div>
+            </div>
+            <div class="footer_column last_column">
+                <div class="solution software">
+                    <h5><a href="http://www.mikroe.com/additional-software/">Additional Software</a></h5>
+                    <ul>
+                        <li><a href="http://www.mikroe.com/visualtft/">Visual TFT</a></li>
+                        <li><a href="http://www.mikroe.com/visualglcd/">Visual GLCD</a></li>
+                        <li><a href="http://www.mikroe.com/package-manager/">Package Manager</a></li>
+                        <li><a href="http://www.mikroe.com/glcd-font-creator/">GLCD Font Creator</a></li>
+                    </ul>
+               </div>                             
+               
+                                              
+            </div>        
+            <div class="separator"></div>   
+        </div>
+        <div class="footer_bottom">            
+            <ul>
+                <li class="support">
+                    <a href="http://www.mikroe.com/esupport/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_support_white.png" alt="Support"> Support</a>                </li>                            
+                <li class="forum">
+                    <a href="http://www.mikroe.com/forum/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_forum_white.png" alt="Forum"> Forum</a>                </li>                   
+                <li class="libstock_icon">
+                    <a href="http://www.libstock.com/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_libstock_white.png" alt="Libstock"> Libstock</a>                </li>                        
+                <li class="store">
+                    <a href="http://www.mikroe.com/store/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_store_white.png" alt="Store"> Store</a>                </li>                                
+                <li class="press">
+                    <a href="http://www.mikroe.com/about/press/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_press_white.png" alt="Press Releases"> Press Releases</a>                </li>                
+                <li class="legal">
+                    <a href="http://www.mikroe.com/legal/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_legal_white.png" alt="Legal Information"> Legal Information</a>                </li>         
+                <li class="archive">
+                    <a href="http://www.mikroe.com/categories/view/46/product-archive/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_archive_white.png" alt="Product Archive"> Product Archive</a>                </li>          
+                <li class="download">
+                    <a href="http://www.mikroe.com/product_downloads/download/"><img src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/icon_dowload_white.png" alt="Downloads"> Downloads</a>                </li>         
+                <div class="separator"></div>  
+            </ul>    
+        </div>
+    </div>
+    <!-- /box -->
+    
+    <div class="copyright">
+       <p>Copyright © 1998 - 2012. MikroElektronika. All rights reserved. All trade and/or services marks mentioned are the property of their respective owners.</p>
+    </div>            
+</div>   
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 952886096;
+var google_conversion_label = "HOQgCMjh8AQQ0MavxgM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/conversion.js">
+</script><iframe name="google_conversion_frame" width="300" height="13" src="./Chapter 5  CCP Modules - Book  PIC Microcontrollers_files/saved_resource.htm" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">&lt;img height="1" width="1" border="0" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/952886096/?frame=0&amp;random=1351636790383&amp;cv=7&amp;fst=1351636790383&amp;num=1&amp;fmt=1&amp;label=HOQgCMjh8AQQ0MavxgM&amp;guid=ON&amp;u_h=800&amp;u_w=1280&amp;u_ah=760&amp;u_aw=1280&amp;u_cd=32&amp;u_his=1&amp;u_tz=120&amp;u_java=true&amp;u_nplug=8&amp;u_nmime=19&amp;ref=http%3A//www.google.com.tr/url%3Fsa%3Dt%26rct%3Dj%26q%3Dcapture%2520compare%2520module%2520tutorial%26source%3Dweb%26cd%3D4%26ved%3D0CDYQFjAD%26url%3Dhttp%253A%252F%252Fwww.mikroe.com%252Fchapters%252Fview%252F6%252Fchapter-5-ccp-modules%252F%26ei%3DgVWQULbhA8-K4gT-3IDQBg%26usg%3DAFQjCNE9CZYprcW_NPvC04FRjA8cmocPyg%26&amp;url=http%3A//www.mikroe.com/chapters/view/6/chapter-5-ccp-modules/&amp;frm=0" /&gt;</iframe>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/952886096/?value=0&amp;amp;label=HOQgCMjh8AQQ0MavxgM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>  
+
+</body></html>

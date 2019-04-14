@@ -1,0 +1,56 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sat Dec 03 14:51:31 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x0000ac
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000059      
+            87 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     DNG2   0x000057    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                      DON   0x000008    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                  GECIKME   0x000055    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                    KESME   0x000009    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+             KOMUT_GONDER   0x00003d    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                KOMUT_YAZ   0x000037    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                 LCD_AYAR   0x00002e    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                     MAIN   0x000005    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                PORT_AYAR   0x00000e    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+               USART_AYAR   0x00001a    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+              VERI_GONDER   0x00004c    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                 VERI_YAZ   0x000046    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000005    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                      DON   0x000008    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                    KESME   0x000009    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                PORT_AYAR   0x00000e    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+               USART_AYAR   0x00001a    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                 LCD_AYAR   0x00002e    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                KOMUT_YAZ   0x000037    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+             KOMUT_GONDER   0x00003d    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                 VERI_YAZ   0x000046    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+              VERI_GONDER   0x00004c    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                  GECIKME   0x000055    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+                     DNG2   0x000057    program     static C:\Users\yucel\Desktop\picProject\odevler\usart_veri_alma\usart_veri_alma.asm
+
+
