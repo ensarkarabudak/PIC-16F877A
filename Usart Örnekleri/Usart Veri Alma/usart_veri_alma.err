@@ -1,8 +1,0 @@
-Warning[207] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 3 : Found label after column 1. (DEGER)
-Warning[207] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 4 : Found label after column 1. (TEMP)
-Message[302] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 25 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 28 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 37 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 41 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 52 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Warning[205] C:\USERS\YUCEL\DESKTOP\PICPROJECT\ODEVLER\USART_VERI_ALMA\USART_VERI_ALMA.ASM 107 : Found directive in column 1. (END)

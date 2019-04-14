@@ -1,9 +1,0 @@
-Warning[207] D:\MPLAB\USART\USART.ASM 2 : Found label after column 1. (SAYAC1)
-Warning[207] D:\MPLAB\USART\USART.ASM 3 : Found label after column 1. (SAYAC2)
-Message[302] D:\MPLAB\USART\USART.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] D:\MPLAB\USART\USART.ASM 9 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] D:\MPLAB\USART\USART.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] D:\MPLAB\USART\USART.ASM 29 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] D:\MPLAB\USART\USART.ASM 31 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] D:\MPLAB\USART\USART.ASM 32 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Warning[205] D:\MPLAB\USART\USART.ASM 55 : Found directive in column 1. (END)
