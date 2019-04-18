@@ -1,0 +1,70 @@
+    LIST	P=16F877A
+    INCLUDE	"P16F877A.INC"
+    
+    ORG		H'00'
+    
+   DEG EQU 0X20
+   D1 EQU 0X21
+   GEC EQU 0X22
+    
+    
+  BSF	    STATUS,5
+    CLRF    TRISB
+    CLRF    TRISC
+    BCF	    STATUS,5
+   
+MAIN_1   
+    MOVLW   B'00000101'
+    MOVWF   DEG
+    
+MAIN
+    CALL    GECIK
+    MOVF    DEG,W
+    CALL    TABLO_1
+    MOVWF   PORTB
+    MOVF    DEG,W
+    CALL    TABLO_2
+    MOVWF   PORTC
+    CALL    GECIK
+    DECFSZ  DEG,F
+    GOTO    MAIN
+    GOTO MAIN_1
+    
+    
+TABLO_1
+    ADDWF   PCL
+    NOP
+    RETLW   B'00000001'
+    RETLW   B'00100001'
+    RETLW   B'01010010'
+    RETLW   B'00100100'
+    RETLW   B'00001000'
+
+TABLO_2
+    ADDWF   PCL
+    NOP
+    RETLW   B'00010000'
+    RETLW   B'00001000'
+    RETLW   B'00000100'
+    RETLW   B'00000010'
+    RETLW   B'00000001'
+
+    
+    GECIK
+    MOVLW 0XFF
+    MOVWF   D1
+    GERI
+    DECFSZ GEC,F
+    GOTO GERI
+    RETURN
+    END
+
+
+    
+    
+
+
+
+    
+
+
