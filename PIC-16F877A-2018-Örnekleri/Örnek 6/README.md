@@ -1,0 +1,1 @@
+LM-35 sýcaklýk senösöründen okunan sýcaklýk deðerini dijital deðere dönüþtürüp referans sýcaklýðýna ulaþtýgýnda bir ledi yakar. 

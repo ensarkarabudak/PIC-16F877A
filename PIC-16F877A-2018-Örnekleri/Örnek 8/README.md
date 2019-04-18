@@ -1,0 +1,1 @@
+Belli aralýklar ile terminale SOS yazýyor.
