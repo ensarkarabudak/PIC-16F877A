@@ -1,1 +1,0 @@
-Bir DC motorun hýz kontrolü yapýlýyor. 2 Buton kullanarak hýzý arttýrýp azaltýyoruz. Motorun o anki hýzýný LCD ekrana yazýyoruz.
